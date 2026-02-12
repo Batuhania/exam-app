@@ -1,0 +1,25 @@
+<svg width="400" height="150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sequence 1: Circle -->
+  <circle cx="50" cy="75" r="30" fill="none" stroke="#38bdf8" stroke-width="3"/>
+  <circle cx="50" cy="75" r="10" fill="#38bdf8"/>
+  
+  <!-- Arrow -->
+  <path d="M90 75 L110 75 M105 70 L110 75 L105 80" stroke="white" stroke-width="2" fill="none"/>
+  
+  <!-- Sequence 2: Square -->
+  <rect x="120" y="45" width="60" height="60" fill="none" stroke="#34d399" stroke-width="3"/>
+  <rect x="140" y="65" width="20" height="20" fill="#34d399"/>
+  
+  <!-- Arrow -->
+  <path d="M190 75 L210 75 M205 70 L210 75 L205 80" stroke="white" stroke-width="2" fill="none"/>
+  
+  <!-- Sequence 3: Triangle -->
+  <polygon points="250,45 220,105 280,105" fill="none" stroke="#f472b6" stroke-width="3"/>
+  <polygon points="250,65 240,85 260,85" fill="#f472b6"/>
+  
+  <!-- Arrow -->
+  <path d="M290 75 L310 75 M305 70 L310 75 L305 80" stroke="white" stroke-width="2" fill="none"/>
+  
+  <!-- Question Mark -->
+  <text x="330" y="90" fill="white" font-family="Arial" font-size="40" font-weight="bold">?</text>
+</svg>

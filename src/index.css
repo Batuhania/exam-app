@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0f172a;
+  --color-background-paper: #1e293b;
+  --color-background-darker: #020617;
+
+  --color-primary: #38bdf8;
+  --color-primary-foreground: #0f172a;
+  --color-primary-hover: #0ea5e9;
+
+  --color-secondary: #c084fc;
+  --color-secondary-foreground: #ffffff;
+
+  --color-accent: #2dd4bf;
+  --color-accent-yellow: #facc15;
+  --color-accent-rose: #fb7185;
+
+  --color-text-main: #f8fafc;
+  --color-text-muted: #94a3b8;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  @apply bg-background text-text-main;
+}
+
+/* Custom Scrollbar for Dark Mode */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background-darker;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-background-paper rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary;
+}
+
+/* 3D Transform Utilities */
+@utility perspective-1000 {
+  perspective: 1000px;
+}
+
+@utility preserve-3d {
+  transform-style: preserve-3d;
+}
+
+@utility backface-hidden {
+  backface-visibility: hidden;
+}
+
+@utility rotate-y-180 {
+  transform: rotateY(180deg);
+}

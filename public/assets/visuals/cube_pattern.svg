@@ -1,0 +1,20 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cube Net -->
+  <rect x="150" y="50" width="50" height="50" fill="none" stroke="white" stroke-width="2"/>
+  <text x="165" y="80" fill="white" font-family="Arial" font-size="20">A</text>
+  
+  <rect x="150" y="100" width="50" height="50" fill="none" stroke="white" stroke-width="2"/>
+  <text x="165" y="130" fill="white" font-family="Arial" font-size="20">B</text>
+  
+  <rect x="100" y="100" width="50" height="50" fill="none" stroke="white" stroke-width="2"/>
+  <text x="115" y="130" fill="white" font-family="Arial" font-size="20">C</text>
+  
+  <rect x="200" y="100" width="50" height="50" fill="none" stroke="white" stroke-width="2"/>
+  <text x="215" y="130" fill="white" font-family="Arial" font-size="20">D</text>
+  
+  <rect x="150" y="150" width="50" height="50" fill="none" stroke="white" stroke-width="2"/>
+  <text x="165" y="180" fill="white" font-family="Arial" font-size="20">E</text>
+  
+  <rect x="150" y="200" width="50" height="50" fill="none" stroke="white" stroke-width="2"/>
+  <text x="165" y="230" fill="white" font-family="Arial" font-size="20">F</text>
+</svg>

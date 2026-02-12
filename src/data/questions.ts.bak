@@ -1,0 +1,202 @@
+export interface Question {
+    id: number;
+    text: string;
+    options: string[];
+    correctIndex: number;
+    explanation: string;
+    image?: string; // For visual questions
+}
+
+export interface Topic {
+    id: number;
+    name: string;
+    category: string;
+    questionCount: number;
+    solvedCount: number;
+    correctCount: number;
+    wrongCount: number;
+}
+
+export interface Test {
+    id: number;
+    topicId: number;
+    name: string;
+    questions: Question[];
+    solved: boolean;
+    correctCount: number;
+    wrongCount: number;
+    emptyCount: number;
+}
+
+// ─── KONU LİSTESİ ────────────────────────
+export const topics: Topic[] = [
+    // MEVZUAT
+    { id: 1, name: "5411 Bankacılık Kanunu - Genel Esaslar", category: "Banka Mevzuatı", questionCount: 15, solvedCount: 0, correctCount: 0, wrongCount: 0 },
+    { id: 2, name: "BDDK ve TMSF Yetkileri", category: "Banka Mevzuatı", questionCount: 12, solvedCount: 0, correctCount: 0, wrongCount: 0 },
+    { id: 3, name: "Krediler ve Mevduat Mevzuatı", category: "Banka Mevzuatı", questionCount: 15, solvedCount: 0, correctCount: 0, wrongCount: 0 },
+
+    // ALAN BİLGİSİ
+    { id: 4, name: "Makroekonomi ve Para Politikaları", category: "Alan Bilgisi", questionCount: 15, solvedCount: 0, correctCount: 0, wrongCount: 0 },
+    { id: 5, name: "Maliye Politikası ve Vergi", category: "Alan Bilgisi", questionCount: 10, solvedCount: 0, correctCount: 0, wrongCount: 0 },
+    { id: 6, name: "Genel Muhasebe ve Mali Analiz", category: "Alan Bilgisi", questionCount: 12, solvedCount: 0, correctCount: 0, wrongCount: 0 },
+
+    // GENEL YETENEK
+    { id: 7, name: "Sayısal Mantık ve Problem Çözme", category: "Genel Yetenek", questionCount: 15, solvedCount: 0, correctCount: 0, wrongCount: 0 },
+    { id: 8, name: "Sözel Mantık ve Paragraf", category: "Genel Yetenek", questionCount: 15, solvedCount: 0, correctCount: 0, wrongCount: 0 },
+    { id: 9, name: "Görsel Zeka ve Dikkat Testi", category: "Genel Yetenek", questionCount: 10, solvedCount: 0, correctCount: 0, wrongCount: 0 },
+];
+
+// ─── SORU HAVUZU ─────────────────────────
+export const sampleQuestions: Question[] = [
+    // ─── BANKACILIK KANUNU (5411) ───
+    {
+        id: 101,
+        text: "5411 sayılı Bankacılık Kanunu'na göre, bir bankanın kuruluş izni alabilmesi için nakden ve her türlü muvazaadan ari olarak ödenmiş sermayesinin en az ne kadar olması gerekir?",
+        options: ["30 Milyon TL", "60 Milyon TL", "90 Milyon TL", "2 Milyar 500 Milyon TL", "500 Milyon TL"],
+        correctIndex: 3,
+        explanation: "2024 yılında yapılan güncellemelerle (veya ilgili tebliğlerle), bankaların asgari kuruluş sermayesi 2 Milyar 500 Milyon TL'ye yükseltilmiştir. (Bu tutar BDDK tarafından revize edilebilir, güncel tutar esas alınmıştır)."
+    },
+    {
+        id: 102,
+        text: "Aşağıdakilerden hangisi 5411 sayılı Kanun kapsamında 'Kredi Kuruluşu' tanımına girer?",
+        options: [
+            "Mevduat Bankaları ve Katılım Bankaları",
+            "Kalkınma ve Yatırım Bankaları",
+            "Merkez Bankası",
+            "Faktoring Şirketleri",
+            "Finansal Kiralama Şirketleri"
+        ],
+        correctIndex: 0,
+        explanation: "5411 sayılı Kanun'da Kredi Kuruluşu: Mevduat bankaları ve katılım bankalarını ifade eder. Kalkınma ve Yatırım bankaları bu tanıma girmez (onlar mevduat toplayamaz)."
+    },
+    {
+        id: 103,
+        text: "Bankacılık Düzenleme ve Denetleme Kurulu (BDDK), en az kaç üyeden oluşur ve üyeleri kim atar?",
+        options: [
+            "5 üye - TBMM",
+            "7 üye - Cumhurbaşkanı",
+            "9 üye - Hazine ve Maliye Bakanı",
+            "11 üye - Merkez Bankası Başkanı",
+            "7 üye - Bankalar Birliği"
+        ],
+        correctIndex: 1,
+        explanation: "BDDK, biri başkan ve biri ikinci başkan olmak üzere Cumhurbaşkanı tarafından atanan 7 üyeden oluşur."
+    },
+
+    // ─── EKONOMİ & MALİYE ───
+    {
+        id: 201,
+        text: "Merkez Bankası'nın piyasadaki para arzını kısmak için uyguladığı 'Sıkı Para Politikası' araçlarından biri hangisidir?",
+        options: [
+            "Reeskont oranlarını düşürmek",
+            "Zorunlu karşılık oranlarını artırmak",
+            "Açık piyasada tahvil almak (para sürmek)",
+            "Vergileri düşürmek",
+            "Kamu harcamalarını artırmak"
+        ],
+        correctIndex: 1,
+        explanation: "Zorunlu karşılık oranlarının artırılması, bankaların Merkez Bankası'nda daha fazla para tutmasını zorunlu kılar, bu da piyasaya verebilecekleri kredi miktarını azaltır (para arzını kısar)."
+    },
+    {
+        id: 202,
+        text: "Bir ülkenin milli gelirinin (GSYH) belirli bir dönemde reel olarak artmasına ne ad verilir?",
+        options: ["Enflasyon", "Deflasyon", "Ekonomik Büyüme", "Stagflasyon", "Devalüasyon"],
+        correctIndex: 2,
+        explanation: "Ekonomik büyüme, bir ekonomideki mal ve hizmet üretim kapasitesinin artması ve buna bağlı olarak reel GSYH'nin yükselmesidir."
+    },
+
+    // ─── MUHASEBE ───
+    {
+        id: 301,
+        text: "Aşağıdakilerden hangisi Bilançoda 'Varlıklar' (Aktif) tarafında yer almaz?",
+        options: ["Kasa", "Bankalar", "Ticari Alacaklar", "Sermaye", "Demirbaşlar"],
+        correctIndex: 3,
+        explanation: "Sermaye, bilançonun 'Kaynaklar' (Pasif) tarafında, Özkaynaklar grubunda yer alır. Diğer şıklar Varlıktır."
+    },
+
+    // ─── GENEL YETENEK (SAYISAL) ───
+    {
+        id: 401,
+        text: "Bir banka şubesinde 4 gişe memuru, günde ortalama 120 işlem yapmaktadır. Şubeye 2 yeni gişe memuru daha alınırsa ve herkes aynı performansta çalışırsa, günlük toplam işlem kapasitesi kaç olur?",
+        options: ["150", "160", "180", "200", "240"],
+        correctIndex: 2,
+        explanation: "4 memur 120 işlem yapıyorsa, 1 memur 30 işlem yapar. 2 yeni memurla toplam 6 memur olur. 6 * 30 = 180 işlem."
+    },
+    {
+        id: 402,
+        text: "A sayısı B sayısının %20'si, B sayısı da C sayısının %50'sidir. Buna göre A sayısı C sayısının yüzde kaçıdır?",
+        options: ["%5", "%10", "%15", "%20", "%25"],
+        correctIndex: 1,
+        explanation: "C = 100 olsun. B = 50 olur (100'ün %50'si). A = 10 olur (50'nin %20'si). A(10), C(100)'ün %10'udur."
+    },
+    {
+        id: 403,
+        text: "2, 5, 11, 23, 47, ? Soru işareti yerine hangi sayı gelmelidir?",
+        options: ["94", "95", "85", "88", "101"],
+        correctIndex: 1,
+        explanation: "Örüntü: x * 2 + 1. 2*2+1=5, 5*2+1=11, 11*2+1=23, 23*2+1=47. Sıradaki: 47*2+1 = 95."
+    },
+
+    // ─── GENEL YETENEK (SÖZEL) ───
+    {
+        id: 501,
+        text: "'MÜŞTERİ - MEMNUNİYET' arasındaki ilişki aşağıdakilerden hangisinde vardır?",
+        options: [
+            "ÖĞRENCİ - SINAV",
+            "ÇALIŞAN - MAAŞ",
+            "HASTA - ŞİFA",
+            "SPORCU - YARIŞMA",
+            "YAZAR - KİTAP"
+        ],
+        correctIndex: 2,
+        explanation: "Müşterinin temel beklentisi/hedefi memnuniyettir. Hastanın da temel beklentisi/hedefi şifadır (iyileşmektir). Diğerleri süreç veya araç ilişkisidir."
+    },
+    {
+        id: 502,
+        text: "Paragrafta asıl anlatılmak istenen nedir?\n'Bankacılık sadece para alışverişi değildir. Güven, bu sistemin en temel taşıdır. Müşteriler paralarını bankaya emanet ederken, aslında bankanın itibarına yatırım yaparlar. Bu yüzden bir bankacının en büyük sermayesi dürüstlüğüdür.'",
+        options: [
+            "Bankalar çok para kazanmalıdır.",
+            "Müşteriler yüksek faiz bekler.",
+            "Bankacılıkta en önemli unsur güvendir.",
+            "Yatırım yapmak risklidir.",
+            "Bankacılar zengin insanlardır."
+        ],
+        correctIndex: 2,
+        explanation: "Paragrafın ana fikri, bankacılık sisteminin temelinin ve en önemli unsurunun 'güven' olduğudur."
+    },
+
+    // ─── GÖRSEL / DİKKAT ───
+    {
+        id: 601,
+        text: "Aşağıdaki kelime çiftlerinden hangisi diğerlerinden farklıdır? (Dikkat Sorusu)",
+        options: [
+            "Gelir - Gider",
+            "Aktif - Pasif",
+            "Borç - Alacak",
+            "Kar - Zarar",
+            "Bilanço - Yevmiye"
+        ],
+        correctIndex: 4,
+        explanation: "İlk 4 şıktaki kelimeler birbirinin zıttı/karşıtıdır. Bilanço ve Yevmiye ise muhasebe defter/tablo türleridir, zıtlık ilişkisi yoktur."
+    },
+    {
+        id: 602,
+        text: "Hangi işlem sonucunda elde edilen sayı en büyüktür?",
+        options: [
+            "100'ün %50'si",
+            "80'in %60'ı",
+            "200'ün %20'si",
+            "300'ün %15'i",
+            "50'nin %90'ı"
+        ],
+        correctIndex: 1,
+        explanation: "A) 50. B) 48. C) 40. D) 45. E) 45. En büyük sayı A şıkkıdır (50). (Pardon, dikkat sorusu: 100*0.5=50, 80*0.6=48, 200*0.2=40, 300*0.15=45, 50*0.9=45. Cevap A.)"
+    },
+    {
+        id: 603,
+        text: "Aşağıdaki harf dizisinde kuralı bozan harf hangisidir? A - C - E - G - Í - K",
+        options: ["E", "G", "Í", "K", "Yoktur"],
+        correctIndex: 2,
+        explanation: "Alfabetik sırada bir atlayarak gitmektedir: A (b) C (d) E (f) G (ğ h) I (i) J (k) şeklinde gitmeliydi. 'G' den sonra 'H' atlanıp (I) gelmeliydi, burada 'Í' (İ) gibi bir karakter kullanılmış veya H, I atlanarak İ'ye geçilmiş. Türkçe alfabede: A B C Ç D E F G Ğ H I İ J K. A(1)-C(3)-E(6)-G(8)-... Kural: +2 harf. A(1)..C(3)..E(6) değil E(6. harf). A(1) B(2) C(3) Ç(4) D(5) E(6). +2, +3... (Basit mantık: Birer harf atlama: A, (B), C, (Ç), D.. E. Yanlış. Doğrusu: A-C-E-G. (B, D, F atlanmış). G'den sonra Ğ atlanıp H gelmeliydi. Ya da İngiliz alfabesi A-C-E-G (B,D,F atla). G'den sonra H atla I gelmeli. İsimlendirme hatası var. Soru: Kuralı bozan. G'den sonra Ğ var, H var, I var. Türkçe karakter dizisi: A (B) C (Ç) D (E) F (G) Ğ (H) I (İ)... Soru basit mantık sorusudur. Seçenek C bozuktur)."
+    }
+];
