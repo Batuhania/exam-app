@@ -1,0 +1,25 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Axes -->
+  <line x1="50" y1="250" x2="350" y2="250" stroke="white" stroke-width="2"/>
+  <line x1="50" y1="250" x2="50" y2="50" stroke="white" stroke-width="2"/>
+  
+  <!-- Bars -->
+  <rect x="70" y="150" width="40" height="100" fill="#34d399"/>
+  <text x="80" y="270" fill="white" font-family="Arial" font-size="12">2020</text>
+  <text x="75" y="145" fill="white" font-family="Arial" font-size="12">100</text>
+  
+  <rect x="140" y="100" width="40" height="150" fill="#38bdf8"/>
+  <text x="150" y="270" fill="white" font-family="Arial" font-size="12">2021</text>
+  <text x="145" y="95" fill="white" font-family="Arial" font-size="12">150</text>
+  
+  <rect x="210" y="120" width="40" height="130" fill="#f472b6"/>
+  <text x="220" y="270" fill="white" font-family="Arial" font-size="12">2022</text>
+  <text x="215" y="115" fill="white" font-family="Arial" font-size="12">130</text>
+  
+  <rect x="280" y="50" width="40" height="200" fill="#fbbf24"/>
+  <text x="290" y="270" fill="white" font-family="Arial" font-size="12">2023</text>
+  <text x="285" y="45" fill="white" font-family="Arial" font-size="12">200</text>
+  
+  <!-- Title -->
+  <text x="120" y="30" fill="white" font-family="Arial" font-size="16" font-weight="bold">Yıllık Satış Adetleri (Bin)</text>
+</svg>
