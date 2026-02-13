@@ -1,10 +1,18 @@
 @echo off
-echo Baslatiliyor...
-IF NOT EXIST "node_modules" (
-    echo node_modules bulunamadi, yukleniyor...
-    call npm install
+echo ExamMaster Baslatiliyor...
+echo.
+
+REM Check if dist/index.html exists, if not build first
+IF NOT EXIST "dist\index.html" (
+    echo Uygulama henuz derlenmemis, derleniyor...
+    IF NOT EXIST "node_modules" (
+        echo Bagimliliklar yukleniyor...
+        call npm install
+    )
+    call npm run build
+    echo Derleme tamamlandi!
+    echo.
 )
-echo Gelistirme sunucusu baslatiliyor...
-start "" "http://localhost:5173"
-call npm run dev -- --open
-pause
+
+echo Uygulama aciliyor...
+start "" "%~dp0dist\index.html"
