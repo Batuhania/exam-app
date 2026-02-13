@@ -1,3 +1,5 @@
+import { expansionQuestions } from './expansion_questions';
+
 export interface Question {
     id: number;
     text: string;
@@ -33,28 +35,37 @@ export interface Test {
 // ─── KONU LİSTESİ ────────────────────────
 export const topics: Topic[] = [
     // MEVZUAT
-    { id: 1, name: "5411 Bankacılık Kanunu - Genel Esaslar", category: "Banka Mevzuatı", questionCount: 10, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [101, 102, 804, 1201, 1202, 1203, 1204, 1205, 1206, 1207] },
-    { id: 2, name: "BDDK ve TMSF Yetkileri", category: "Banka Mevzuatı", questionCount: 8, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [103, 806, 1208, 1209, 1210, 1211] },
-    { id: 3, name: "Krediler ve Mevduat Mevzuatı", category: "Banka Mevzuatı", questionCount: 8, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [802, 907, 1212, 1213, 1214, 1215] },
+    { id: 1, name: "5411 Bankacılık Kanunu - Genel Esaslar", category: "Banka Mevzuatı", questionCount: 15, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [101, 102, 804, 1201, 1202, 1203, 1204, 1205, 1206, 1207, 1701, 1702, 1703, 1704, 1705] },
+    { id: 2, name: "BDDK ve TMSF Yetkileri", category: "Banka Mevzuatı", questionCount: 13, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [103, 806, 1208, 1209, 1210, 1211, 1706, 1707, 1708, 1709, 1710] },
+    { id: 3, name: "Krediler ve Mevduat Mevzuatı", category: "Banka Mevzuatı", questionCount: 13, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [802, 907, 1212, 1213, 1214, 1215, 1711, 1712, 1713, 1714, 1715] },
 
     // ALAN BİLGİSİ
-    { id: 4, name: "Makroekonomi ve Para Politikaları", category: "Alan Bilgisi", questionCount: 11, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [201, 202, 801, 809, 810, 1301, 1302, 1303, 1304, 1305] },
-    { id: 5, name: "Maliye Politikası ve Vergi", category: "Alan Bilgisi", questionCount: 8, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [805, 807, 910, 1306, 1307, 1308, 1309] },
-    { id: 6, name: "Genel Muhasebe ve Mali Analiz", category: "Alan Bilgisi", questionCount: 11, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [301, 808, 901, 902, 908, 1401, 1402, 1403, 1404, 1405] },
-    { id: 13, name: "Ticaret Hukuku", category: "Alan Bilgisi", questionCount: 8, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [903, 904, 909, 1406, 1407, 1408, 1409] },
-    { id: 14, name: "Türkiye Ekonomisi", category: "Alan Bilgisi", questionCount: 8, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [905, 906, 1410, 1411, 1412, 1413] },
+    { id: 4, name: "Makroekonomi ve Para Politikaları", category: "Alan Bilgisi", questionCount: 21, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [201, 202, 801, 809, 810, 1301, 1302, 1303, 1304, 1305, 1801, 1802, 1803, 1804, 1805, 2101, 2102, 2103, 2104, 2105] },
+    { id: 5, name: "Maliye Politikası ve Vergi", category: "Alan Bilgisi", questionCount: 13, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [805, 807, 910, 1306, 1307, 1308, 1309, 1806, 1807, 1808, 1809, 1810] },
+    { id: 6, name: "Genel Muhasebe ve Mali Analiz", category: "Alan Bilgisi", questionCount: 16, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [301, 808, 901, 902, 908, 1401, 1402, 1403, 1404, 1405, 1811, 1812, 1813, 1814, 1815] },
+    { id: 13, name: "Ticaret Hukuku", category: "Alan Bilgisi", questionCount: 13, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [903, 904, 909, 1406, 1407, 1408, 1409, 1816, 1817, 1818, 1819, 1820] },
+    { id: 14, name: "Türkiye Ekonomisi", category: "Alan Bilgisi", questionCount: 11, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [905, 906, 1410, 1411, 1412, 1413, 1821, 1822, 1823] },
+    { id: 15, name: "Dijital Bankacılık ve Fintech", category: "Alan Bilgisi", questionCount: 5, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [2001, 2002, 2003, 2004, 2005] },
 
     // GENEL YETENEK
-    { id: 7, name: "Sayısal Mantık ve Problem Çözme", category: "Genel Yetenek", questionCount: 13, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [401, 402, 403, 701, 811, 1102, 1103, 1501, 1502, 1503, 1504, 1505, 1506] },
-    { id: 8, name: "Sözel Mantık ve Paragraf", category: "Genel Yetenek", questionCount: 10, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [501, 502, 703, 1101, 1601, 1602, 1603, 1604, 1605, 1606] },
-    { id: 9, name: "Görsel Zeka ve Dikkat Testi (Genel)", category: "Genel Yetenek", questionCount: 8, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [601, 602, 603, 1607, 1608, 1609] },
-    { id: 10, name: "Zorlu Genel Yetenek (Çıkmış Sorular)", category: "Genel Yetenek", questionCount: 8, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [701, 702, 703, 704, 705, 1610, 1611, 1612] },
-    { id: 11, name: "Görsel Zeka (Küp ve Desen)", category: "Genel Yetenek", questionCount: 6, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [1001, 1002, 705, 1613, 1614, 1615] },
-    { id: 12, name: "Veri Analizi (Tablo ve Grafik)", category: "Genel Yetenek", questionCount: 5, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [1003, 702, 1616, 1617, 1618] },
+    { id: 7, name: "Sayısal Mantık ve Problem Çözme", category: "Genel Yetenek", questionCount: 18, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [401, 402, 403, 701, 811, 1102, 1103, 1501, 1502, 1503, 1504, 1505, 1506, 1901, 1902, 1903, 1904, 1905] },
+    { id: 8, name: "Sözel Mantık ve Paragraf", category: "Genel Yetenek", questionCount: 15, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [501, 502, 703, 1101, 1601, 1602, 1603, 1604, 1605, 1606, 1906, 1907, 1908, 1909, 1910] },
+    { id: 9, name: "Görsel Zeka ve Dikkat Testi (Genel)", category: "Genel Yetenek", questionCount: 11, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [601, 602, 603, 1607, 1608, 1609, 1911, 1912, 1913] },
+    { id: 10, name: "Zorlu Genel Yetenek (Çıkmış Sorular)", category: "Genel Yetenek", questionCount: 16, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [701, 702, 703, 704, 705, 1610, 1611, 1612, 1914, 1915, 1916, 2201, 2202, 2203, 2204, 2205] },
+    { id: 11, name: "Görsel Zeka (Küp ve Desen)", category: "Genel Yetenek", questionCount: 8, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [1001, 1002, 705, 1613, 1614, 1615, 1917, 1918] },
+    { id: 12, name: "Veri Analizi (Tablo ve Grafik)", category: "Genel Yetenek", questionCount: 8, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [1003, 702, 1616, 1617, 1618, 1919, 1920, 1921] },
+    { id: 20, name: "İleri Düzey Genel Yetenek (Sınav Özel)", category: "Genel Yetenek", questionCount: 10, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010] },
+    { id: 21, name: "Dikkat ve Hız Testi (Garanti Paketi)", category: "Genel Yetenek", questionCount: 10, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008, 4009, 4010] },
+    // ─── YENİ EKLENEN KATEGORİLER (GENİŞLETİLMİŞ PAKET) ───
+    { id: 22, name: "Bankacılık Hukuku ve Mevzuat (İleri)", category: "Banka Mevzuatı", questionCount: 20, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [5021, 5022, 5023, 5024, 5025, 5026, 5027, 5028, 5029, 5030, 5031, 5032, 5033, 5034, 5035, 5036, 5037, 5038, 5039, 5040] },
+    { id: 23, name: "Ekonomi, Finans ve Piyasalar (Uzman)", category: "Alan Bilgisi", questionCount: 30, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [5041, 5042, 5043, 5044, 5045, 5046, 5047, 5048, 5049, 5050, 5051, 5052, 5053, 5054, 5055, 5056, 5057, 5058, 5059, 5060, 5061, 5062, 5063, 5064, 5065, 5066, 5067, 5068, 5069, 5070] },
+    { id: 24, name: "Sayısal/Sözel Mantık ve Şifre (ALES & DGS)", category: "Genel Yetenek", questionCount: 50, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012, 5013, 5014, 5015, 5016, 5017, 5018, 5019, 5020, 5071, 5072, 5073, 5074, 5075, 5076, 5077, 5078, 5079, 5080, 5081, 5082, 5083, 5084, 5085, 5086, 5087, 5088, 5089, 5090, 5091, 5092, 5093, 5094, 5095, 5096, 5097, 5098, 5099, 5100] },
+    { id: 25, name: "Dijital Bankacılık ve Gelecek Trendleri", category: "Alan Bilgisi", questionCount: 20, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [5101, 5102, 5103, 5104, 5105, 5106, 5107, 5108, 5109, 5110, 5111, 5112, 5113, 5114, 5115, 5116, 5117, 5118, 5119, 5120] },
 ];
 
 // ─── SORU HAVUZU ─────────────────────────
-export const sampleQuestions: Question[] = [
+// ─── SORU HAVUZU (TEMEL PAKET) ─────────────────
+const baseQuestions: Question[] = [
     // ─── BANKACILIK KANUNU (5411) ───
     {
         id: 101,
@@ -201,10 +212,10 @@ export const sampleQuestions: Question[] = [
     },
     {
         id: 603,
-        text: "Aşağıdaki harf dizisinde kuralı bozan harf hangisidir? A - C - E - G - Í - K",
-        options: ["E", "G", "Í", "K", "Yoktur"],
+        text: "Aşağıdaki sayı dizisinde soru işareti yerine hangi sayı gelmelidir? 2 - 6 - 12 - 20 - 30 - ?",
+        options: ["36", "40", "42", "48", "56"],
         correctIndex: 2,
-        explanation: "Alfabetik sırada bir atlayarak gitmektedir: A (b) C (d) E (f) G (ğ h) I (i) J (k) şeklinde gitmeliydi. 'G' den sonra 'H' atlanıp (I) gelmeliydi, burada 'Í' (İ) gibi bir karakter kullanılmış veya H, I atlanarak İ'ye geçilmiş. Türkçe alfabede: A B C Ç D E F G Ğ H I İ J K. A(1)-C(3)-E(6)-G(8)-... Kural: +2 harf. A(1)..C(3)..E(6) değil E(6. harf). A(1) B(2) C(3) Ç(4) D(5) E(6). +2, +3... (Basit mantık: Birer harf atlama: A, (B), C, (Ç), D.. E. Yanlış. Doğrusu: A-C-E-G. (B, D, F atlanmış). G'den sonra Ğ atlanıp H gelmeliydi. Ya da İngiliz alfabesi A-C-E-G (B,D,F atla). G'den sonra H atla I gelmeli. İsimlendirme hatası var. Soru: Kuralı bozan. G'den sonra Ğ var, H var, I var. Türkçe karakter dizisi: A (B) C (Ç) D (E) F (G) Ğ (H) I (İ)... Soru basit mantık sorusudur. Seçenek C bozuktur)."
+        explanation: "Sayılar arasındaki artış miktarı sırasıyla 4, 6, 8, 10 şeklindedir. Sırada 12 artış olmalıdır. 30 + 12 = 42. (Veya n*(n+1) kuralı: 1*2, 2*3, 3*4... 6*7=42)."
     },
 
     // ─── ZORLU SORULAR (İŞ BANKASI VB.) ───
@@ -428,11 +439,10 @@ export const sampleQuestions: Question[] = [
     // ─── GÖRSEL ZEKA & VERİ ANALİZİ (AŞAMA 4) ───
     {
         id: 1001,
-        text: "Yukarıdaki küp açılımı katlandığında, aşağıdakilerden hangisi oluşmaz? (Görsel Zeka)",
-        image: "/assets/visuals/cube_pattern.svg",
-        options: ["A ile C karşılıklı gelir", "E ile F komşudur", "B ile D karşılıklı gelir", "A ile E karşılıklı gelir", "C ile D komşudur"],
-        correctIndex: 3,
-        explanation: "Açılımda birer kare atlayarak karşılıklı yüzler bulunur: A ile E (YANLIŞ, A ile F? Hayır. Dikey şerit: A-B-E-F. A ile E, B ile F karşılıklı. Yatay: C-B-D. C ile D karşılıklı. Şıkkı kontrol edelim: A-E karşılıklı mı? Bir kare atla: A..(B)..E. Evet. C-D karşılıklı mı? C..(B)..D. Evet. B-F? B..(E)..F. Evet. Soru 'hangisi oluşmaz' veya hatalı ifade. B ile F olmalı. Şıklar: A-C karşılıklı (YANLIŞ). A ve C komşudur. Cevap A şıkkı yanlıştır. (Düzenleme: Soru metnini 'Hangisi yanlıştır?' olarak düşünelim. A ile C komşudur, karşılıklı değildir. Doğru cevap A.)"
+        text: "Hangisi diğerlerinden farklı bir kategoridedir? (Mantıksal Sınıflandırma)",
+        options: ["Kedi", "Köpek", "İnek", "Aslan", "Tavuk"],
+        correctIndex: 4,
+        explanation: "Kedi, Köpek, İnek ve Aslan memeli hayvanlar grubundayken, Tavuk kanatlılar (kuşlar) grubundadır."
     },
     {
         id: 1002,
@@ -863,10 +873,10 @@ export const sampleQuestions: Question[] = [
     },
     {
         id: 1617,
-        text: "20 sayfalık bir gazeteden rastgele çekilen bir yaprağın sayfa numaraları toplamı hangisi olabilir? (Yapraklar iç içe değil, tek yaprak 4 sayfa içerir mantığıyla değil, klasik yaprak çekimi)",
-        options: ["15", "21", "41", "35", "56"],
+        text: "Bir kitabın rastgele koparılan bir yaprağındaki sayfa numaralarının toplamı aşağıdakilerden hangisi olabilir?",
+        options: ["18", "21", "24", "40", "50"],
         correctIndex: 1,
-        explanation: "Bir yaprağın ön ve arka yüzü vardır. Ön yüzü x ise arka yüzü x+1'dir. Toplamları x + (x+1) = 2x+1. Yani toplam daima TEK sayı olmalıdır. A, B, C, D şıkları tek. Ancak sayfa numaraları ardışıktır. Örneğin 10-11 ise toplam 21 eder. 7-8 ise 15 eder. 20-21 (20 sayfalık gazetede 21 olmaz). Soru biraz kapalı. Gazete yaprağı denince (örn 4 sayfa): 1, 2, 19, 20 gibi mi? Telli defter yaprağı gibi düşünürsek ön n, arka n+1. Toplamı 2n+1. 2n+1 = 21 ise 2n=20, n=10. Sayfa 10 ve 11. Olabilir."
+        explanation: "Bir yaprağın ön yüzü n ise, arka yüzü n+1'dir (ardışık sayılar). Toplamları n + (n+1) = 2n+1'dir. Bu sonuç daima TEK sayı olmalıdır. Şıklarda tek olan tek sayı 21'dir (Sayfalar 10 ve 11)."
     },
     {
         id: 1618,
@@ -874,5 +884,682 @@ export const sampleQuestions: Question[] = [
         options: ["110", "199", "189", "109", "200"],
         correctIndex: 1,
         explanation: "Üç basamaklı en küçük sayı: 100. İki basamaklı en büyük sayı: 99. Toplam: 199."
+    },
+
+    // ─── YENİ EKLENEN SORULAR (EKSTRA PAKET 2) ───
+    {
+        id: 1701,
+        text: "Bankaların kredi verme işlemlerinde 'Dolaylı Kredi' olarak kabul edilen işlem hangisidir?",
+        options: ["Nakit Krediler", "Teminat Mektupları", "Tüketici Kredileri", "Kredi Kartı Harcamaları", "Rotatif Krediler"],
+        correctIndex: 1,
+        explanation: "Gayrinakdi krediler (teminat mektubu, kefalet, akreditif vb.) dolaylı kredi veya gayrinakdi kredi olarak adlandırılır. Banka henüz nakit ödeme yapmamıştır ancak bir yükümlülük altına girmiştir."
+    },
+    {
+        id: 1702,
+        text: "Bankalar Kanunu'na göre, bankalar özkaynaklarının yüzde kaçını aşan tutarda gayrimenkul edinemezler?",
+        options: ["%10", "%25", "%50", "%75", "%100"],
+        correctIndex: 2,
+        explanation: "Bankalar, tapu kütüğüne tescil edilen gayrimenkullerin ve gayrimenkul gibi değerlenen varlıkların net defter değerleri toplamı, özkaynaklarının %50'sini aşamaz."
+    },
+    {
+        id: 1703,
+        text: "Bir bankanın faiz gelirleri 1000 TL, faiz giderleri 600 TL ise, Net Faiz Marjı (basitçe) nasıl yorumlanır?",
+        options: ["Banka 400 TL zarar etmiştir", "Banka 400 TL faiz karı elde etmiştir", "Banka 1600 TL işlem hacmi yapmıştır", "Bankanın aktif karlılığı %40'tır", "Bankanın SYR'si yüksektir"],
+        correctIndex: 1,
+        explanation: "Net Faiz Geliri = Faiz Gelirleri - Faiz Giderleri = 1000 - 600 = 400 TL kar."
+    },
+    {
+        id: 1704,
+        text: "Müşterini Tanı (KYC) ilkesi hangi suçun önlenmesi için kritik öneme sahiptir?",
+        options: ["Hırsızlık", "Zimmet", "Karapara Aklama ve Terörün Finansmanı", "Vergi Kaçırma", "Dolandırıcılık"],
+        correctIndex: 2,
+        explanation: "KYC (Know Your Customer) prosedürleri, suç gelirlerinin aklanması (karapara) ve terörün finansmanı ile mücadelede en temel önleyici tedbirdir."
+    },
+    {
+        id: 1705,
+        text: "Bankalararası Kart Merkezi'nin (BKM) sunduğu, yerli ödeme şeması markası nedir?",
+        options: ["Visa", "Mastercard", "TROY", "Amex", "JCB"],
+        correctIndex: 2,
+        explanation: "TROY (Türkiye'nin Ödeme Yöntemi), BKM tarafından kurulan ve işletilen yerli kartlı ödeme şemasıdır."
+    },
+    {
+        id: 1706,
+        text: "BDDK Başkanı'nın görev süresi kaç yıldır?",
+        options: ["3 yıl", "4 yıl", "5 yıl", "6 yıl", "7 yıl"],
+        correctIndex: 1,
+        explanation: "BDDK Başkan ve üyelerinin görev süresi 4 yıldır. Süresi biten üyeler tekrar atanabilir."
+    },
+    {
+        id: 1707,
+        text: "TMSF tarafından el konulan bankalardaki mevduat sigortası kime aittir?",
+        options: ["Sadece gerçek kişilere", "Sadece ticari şirketlere", "Sadece kamu kurumlarına", "Tüm mevduat sahiplerine", "Yabancılara"],
+        correctIndex: 0,
+        explanation: "Mevduat sigortası, kural olarak 'Gerçek Kişiler' adına açılan tasarruf mevduatı ve katılım fonları için geçerlidir (Ticari mevduat şu anki mevzuatta kapsam dışıdır, ancak limitler dahilinde değişebilir. Temel bilgi: Gerçek kişiler)."
+    },
+    {
+        id: 1708,
+        text: "Bir bankanın faaliyet iznini (lisansını) iptal etme yetkisi kime aittir?",
+        options: ["TCMB", "Hazine Bakanlığı", "BDDK", "Cumhurbaşkanı", "Mahkemeler"],
+        correctIndex: 2,
+        explanation: "Bankaların kuruluşuna ve faaliyetine izin verme veya izni iptal etme yetkisi, Kurul'un (BDDK) kararı iledir."
+    },
+    {
+        id: 1709,
+        text: "SWIFT sistemi ne işe yarar?",
+        options: ["Kredi notu sorgulama", "Uluslararası para transferi mesajlaşması", "Döviz kuru belirleme", "Altın saklama", "Hisse senedi alım satımı"],
+        correctIndex: 1,
+        explanation: "SWIFT, bankalar arasında uluslararası para transferi emirlerinin ve mesajlarının güvenli bir şekilde iletilmesini sağlayan ağdır."
+    },
+    {
+        id: 1710,
+        text: "Bankacılıkta 'Sendikasyon Kredisi' ne demektir?",
+        options: ["Bir bankanın şubeleri arası kredi", "Birden fazla bankanın bir araya gelerek tek bir borçluya verdiği büyük kredi", "Müşterinin bankaya verdiği borç", "Merkez Bankasından alınan borç", "Kredi kartı borcu"],
+        correctIndex: 1,
+        explanation: "Sendikasyon, birden çok bankanın (konsorsiyum) bir araya gelerek, genellikle uluslararası piyasalardan veya büyük projelere, tek bir borçluya (devlet veya büyük şirket/banka) sağladığı kredidir."
+    },
+    {
+        id: 1711,
+        text: "Kredi Kartlarında asgari ödeme tutarı, limiti 25.000 TL ve üzeri olanlar için dönem borcunun en az yüzde kaçıdır? (Güncel mevzuat)",
+        options: ["%20", "%30", "%40", "%50", "%10"],
+        correctIndex: 2,
+        explanation: "Kredi kartı limiti 25.000 TL ve üzeri olan kartlarda asgari ödeme oranı dönem borcunun %40'ıdır (25.000 TL altı için %20'dir)."
+    },
+    {
+        id: 1712,
+        text: "Mevduat faiz getirisi üzerinden devlet tarafından kesilen vergiye ne ad verilir?",
+        options: ["KDV", "ÖTV", "Stopaj (Gelir Vergisi Tevkifatı)", "Damga Vergisi", "BSMV"],
+        correctIndex: 2,
+        explanation: "Mevduat faizlerinden kaynağında kesilen vergiye Stopaj (Tevkifat) denir."
+    },
+    {
+        id: 1713,
+        text: "Çek Kanunu'na göre 'Karşılıksız Çek' keşide etmenin yaptırımı nedir?",
+        options: ["Sadece para cezası", "Adli para cezası ve ödenmezse hapis", "Doğrudan hapis cezası", "Ticari itibar kaybı", "Uyarı"],
+        correctIndex: 1,
+        explanation: "Karşılıksız çek düzenleme suçunda adli para cezası verilir. Bu ceza ödenmezse hapis cezasına çevrilir. Ayrıca çek düzenleme ve çek hesabı açma yasağı getirilir."
+    },
+    {
+        id: 1714,
+        text: "Bankaların kredi verirken müşteriden istedikleri 'Findeks Kredi Notu' aralığı nedir?",
+        options: ["0 - 100", "0 - 1000", "1 - 1900", "500 - 2500", "0 - 500"],
+        correctIndex: 2,
+        explanation: "Findeks kredi notu 1 ile 1900 arasında değişen bir puandır. 1 en riskli, 1900 en güvenilir seviyedir."
+    },
+    {
+        id: 1715,
+        text: "Tüketici Kredilerinde cayma hakkı süresi kaç gündür?",
+        options: ["7 gün", "10 gün", "14 gün", "30 gün", "Cayma hakkı yoktur"],
+        correctIndex: 2,
+        explanation: "Tüketici kredisinde tüketici, 14 gün içinde herhangi bir gerekçe göstermeksizin ve cezai şart ödemeksizin sözleşmeden cayma hakkına sahiptir."
+    },
+
+    // ─── EKONOMİ & MALİYE (EKSTRA) ───
+    {
+        id: 1801,
+        text: "Enflasyon sepetinde ağırlığı en yüksek olan harcama grubu genellikle hangisidir?",
+        options: ["Giyim ve Ayakkabı", "Gıda ve Alkolsüz İçecekler", "Eğlence ve Kültür", "Sağlık", "Haberleşme"],
+        correctIndex: 1,
+        explanation: "TÜİK enflasyon sepetinde genellikle en yüksek ağırlığa sahip gruplar Gıda ve Barınma (Konut) harcamalarıdır."
+    },
+    {
+        id: 1802,
+        text: "Devalüasyon ne demektir?",
+        options: ["Paranın değer kazanması", "Milli paranın dış paralar karşısında değerinin (resmi kararla) düşürülmesi", "Fiyatların düşmesi", "Döviz kurunun sabitlenmesi", "Faizlerin artması"],
+        correctIndex: 1,
+        explanation: "Devalüasyon, sabit kur sisteminde milli paranın değerinin resmi otorite tarafından diğer para birimleri karşısında düşürülmesidir. (Dalgalı kurda buna 'değer kaybı' denir ama halk arasında devalüasyon olarak da bilinir)."
+    },
+    {
+        id: 1803,
+        text: "Gini Katsayısı 0'a yaklaşırsa ne anlama gelir?",
+        options: ["Gelir dağılımı adaletsizleşir", "Gelir dağılımı adaletli hale gelir (Tam Eşitlik)", "Enflasyon artar", "Büyüme durur", "Ülke fakirleşir"],
+        correctIndex: 1,
+        explanation: "Gini katsayısı 0 ile 1 arasındadır. 0 tam eşitliği (herkes eşit gelir), 1 tam eşitsizliği ifade eder. 0'a yaklaşması iyileşmeyi gösterir."
+    },
+    {
+        id: 1804,
+        text: "Bir ekonomide toplam talep yetersizliği nedeniyle ortaya çıkan işsizlik türüne ne ad verilir?",
+        options: ["Yapısal İşsizlik", "Konjonktürel (Durgunluk) İşsizlik", "Mevsimlik İşsizlik", "Friksiyonel (Geçici) İşsizlik", "Gizli İşsizlik"],
+        correctIndex: 1,
+        explanation: "Ekonomik daralma/durgunluk dönemlerinde talebin azalmasıyla firmaların işçi çıkarması sonucu oluşan işsizliğe Konjonktürel İşsizlik denir."
+    },
+    {
+        id: 1805,
+        text: "Para politikasını yürütmekten sorumlu kurum hangisidir?",
+        options: ["Hazine", "Maliye Bakanlığı", "Merkez Bankası", "Bankalar Birliği", "SPK"],
+        correctIndex: 2,
+        explanation: "Para politikasının (faiz, para arzı, kur rejimi vb.) tek yetkili yürütücüsü Merkez Bankası'dır."
+    },
+    {
+        id: 1806,
+        text: "Devletin vergi gelirlerinden vazgeçmesi (muafiyet/istisna) işlemine literatürde ne ad verilir?",
+        options: ["Vergi Harcaması", "Vergi Ziyaı", "Vergi Kaçağı", "Vergi Yükü", "Mali Anestezi"],
+        correctIndex: 0,
+        explanation: "Devletin sosyal veya ekonomik amaçlarla alması gereken vergiden vazgeçmesine (muafiyet, istisna, indirim) 'Vergi Harcaması' (Tax Expenditure) denir."
+    },
+    {
+        id: 1807,
+        text: "Dolaysız vergilerin (Gelir, Kurumlar) en önemli özelliği nedir?",
+        options: ["Fiyata yansır", "Herkes aynı öder", "Ödeme gücüne göre alınabilir (Adaletlidir)", "Tahsilatı çok kolaydır", "Tüketimden alınır"],
+        correctIndex: 2,
+        explanation: "Dolaysız vergiler gelirden veya servetten alındığı için artan oranlı tarifeler uygulanabilir ve ödeme gücüne göre vergilendirme (vergi adaleti) sağlanabilir."
+    },
+    {
+        id: 1808,
+        text: "Türkiye'de Bütçe Kanunu Teklifini kim hazırlar ve meclise sunar?",
+        options: ["Hazine Bakanı", "Merkez Bankası Başkanı", "Cumhurbaşkanı", "TBMM Başkanı", "Sayıştay"],
+        correctIndex: 2,
+        explanation: "Cumhurbaşkanlığı Hükümet Sisteminde bütçe kanun teklifini Cumhurbaşkanı hazırlar ve TBMM'ye sunar."
+    },
+    {
+        id: 1809,
+        text: "Aşağıdakilerden hangisi bir 'Para Benzeri' (Quasi-Money) sayılır?",
+        options: ["Vadesiz Mevduat", "Nakit Para", "Vadeli Mevduat", "Bozuk Para", "Kredi Kartı"],
+        correctIndex: 2,
+        explanation: "Vadeli mevduat, likiditesi nakit kadar yüksek olmayan ancak paraya çevrilebilir (para benzeri) bir varlıktır. Vadesiz mevduat ve nakit M1 (Dar Para) içindedir."
+    },
+    {
+        id: 1810,
+        text: "Resesyon nedir?",
+        options: ["Enflasyonun düşmesi", "Ekonomik büyümenin üst üste iki çeyrek negatif olması (Küçülme)", "İşsizliğin azalması", "İhracat rekoru", "Borsanın yükselmesi"],
+        correctIndex: 1,
+        explanation: "Resesyon, ekonomik faaliyetlerin duraklaması veya gerilemesi, teknik olarak GSYH'nin üst üste iki çeyrek (6 ay) küçülmesi durumudur."
+    },
+    {
+        id: 1811,
+        text: "Şirketlerin dönem sonu karlarından ayırmak zorunda oldukları yasal fonlara ne denir?",
+        options: ["Yedek Akçe", "Amortisman", "Kar Payı (Temettü)", "Provizyon", "Şerefiye"],
+        correctIndex: 0,
+        explanation: "TTK gereği şirketler safi karın %5'ini 'Yasal Yedek Akçe' olarak ayırmak zorundadır."
+    },
+    {
+        id: 1812,
+        text: "Bilanço tarihi itibarıyla işletmenin kasasında bulunan yabancı paralar hangi kurla değerlenir?",
+        options: ["Alış Kuru", "Satış Kuru", "Efektif Alış Kuru", "Çapraz Kur", "Tarihi Kur"],
+        correctIndex: 2,
+        explanation: "Vergi Usul Kanunu'na göre kasadaki nakit yabancı paralar (efektif), Maliye Bakanlığı'nın açıkladığı 'Efektif Alış Kuru' ile değerlenir. (Banka hesabındakiler Döviz Alış Kuru ile)."
+    },
+    {
+        id: 1813,
+        text: "Çift taraflı kayıt sistemini (Muhasebenin babası) bulan kişi kimdir?",
+        options: ["Adam Smith", "Luca Pacioli", "Keynes", "Marx", "Taylor"],
+        correctIndex: 1,
+        explanation: "İtalyan rahip ve matematikçi Luca Pacioli, 1494 yılında yazdığı eserle çift taraflı kayıt sistemini (modern muhasebe) sistemleştirmiştir."
+    },
+    {
+        id: 1814,
+        text: "Bir işletmenin kısa vadeli borçlarını ödeme gücünü gösteren oran hangisidir?",
+        options: ["Kaldıraç Oranı", "Cari Oran", "Aktif Devir Hızı", "Karlılık Oranı", "Borçlanma Oranı"],
+        correctIndex: 1,
+        explanation: "Cari Oran = Dönen Varlıklar / Kısa Vadeli Yabancı Kaynaklar. İşletmenin likidite durumunu (kısa vadeli borç ödeme gücünü) gösterir."
+    },
+    {
+        id: 1815,
+        text: "Tacir olmanın sonuçlarından biri olan 'Basiretli İş Adamı Gibi Davranma' yükümlülüğü neyi ifade eder?",
+        options: ["Çok kar etmeyi", "Geleceği görmeyi", "İşlerinde tedbirli, öngörülü ve dikkatli olmayı", "Rakiplerini ezmeyi", "Vergi kaçırmayı"],
+        correctIndex: 2,
+        explanation: "Tacir, ticaretine ait bütün faaliyetlerinde basiretli (öngörülü, tedbirli) bir iş adamı gibi hareket etmek zorundadır."
+    },
+    {
+        id: 1816,
+        text: "Limited şirket en az kaç sermaye ile kurulur? (2024 itibarıyla)",
+        options: ["10.000 TL", "50.000 TL", "100.000 TL", "250.000 TL", "500.000 TL"],
+        correctIndex: 1,
+        explanation: "2024/2025 güncellemeleriyle Limited Şirket asgari sermayesi 50.000 TL, Anonim Şirket asgari sermayesi 250.000 TL olmuştur."
+    },
+    {
+        id: 1817,
+        text: "Kıymetli evraklarda 'Ciro' ne işe yarar?",
+        options: ["Senedi iptal eder", "Senedin vadesini uzatır", "Senedin mülkiyetini veya tahsil yetkisini başkasına devreder", "Senedi bankaya bloke eder", "Faiz işletir"],
+        correctIndex: 2,
+        explanation: "Ciro, senet üzerindeki hakların (mülkiyetin) bir başkasına devredilmesi işlemidir (Arka yüzün imzalanması)."
+    },
+    {
+        id: 1818,
+        text: "Bir şirketin 'Konkordato' ilan etmesi ne demektir?",
+        options: ["İflas ettiğini açıklaması", "Borçlarını ödemek için mahkeme korumasında alacaklılarla anlaşma yaparak vade uzatması veya indirim istemesi", "Şirketi kapatması", "Borsaya açılması", "Ortak alması"],
+        correctIndex: 1,
+        explanation: "Konkordato, mali durumu bozulan borçlunun iflastan kurtulmak için alacaklılarıyla yaptığı ve mahkemenin onayladığı bir yeniden yapılandırma anlaşmasıdır."
+    },
+    {
+        id: 1819,
+        text: "Marka tescili Türkiye'de hangi kurum tarafından yapılır?",
+        options: ["Ticaret Bakanlığı", "TÜRKPATENT (Türk Patent ve Marka Kurumu)", "Kültür Bakanlığı", "Sanayi Odası", "Noter"],
+        correctIndex: 1,
+        explanation: "Marka, patent ve tasarım tescilleri TÜRKPATENT tarafından yapılır."
+    },
+    {
+        id: 1820,
+        text: "İş Kanunu'na göre haftalık normal çalışma süresi en çok kaç saattir?",
+        options: ["40", "45", "48", "50", "60"],
+        correctIndex: 1,
+        explanation: "4857 sayılı İş Kanunu'na göre haftalık çalışma süresi en çok 45 saattir."
+    },
+    {
+        id: 1821,
+        text: "Türkiye'nin para birimi kodu uluslararası piyasalarda nedir?",
+        options: ["TRL", "YTL", "TRY", "TRK", "TUR"],
+        correctIndex: 2,
+        explanation: "Türk Lirası'nın uluslararası ISO kodu TRY'dir (Paradab 6 sıfır atıldıktan sonra YTL olmuş, sonra tekrar TL'ye dönülmüş ancak kod TRY olarak kalmıştır)."
+    },
+    {
+        id: 1822,
+        text: "Türkiye'de Bireysel Emeklilik Sistemi'nde (BES) devlet katkısı oranı yüzde kaçtır?",
+        options: ["%10", "%20", "%25", "%30", "%50"],
+        correctIndex: 3,
+        explanation: "BES'te devlet katkısı oranı %25'ten %30'a yükseltilmiştir (2023 itibarıyla)."
+    },
+    {
+        id: 1823,
+        text: "Türkiye Varlık Fonu'nun başkanı kimdir?",
+        options: ["Hazine Bakanı", "Merkez Bankası Başkanı", "Cumhurbaşkanı", "Genel Müdür", "Varlık Fonu Başkanı"],
+        correctIndex: 2,
+        explanation: "Türkiye Varlık Fonu Yönetim Kurulu Başkanı, Cumhurbaşkanı'dır."
+    },
+
+    // ─── GENEL YETENEK (EKSTRA) ───
+    {
+        id: 1901,
+        text: "Bir sayının 3 katının 5 eksiği 40 ise, bu sayı kaçtır?",
+        options: ["10", "12", "15", "18", "20"],
+        correctIndex: 2,
+        explanation: "3x - 5 = 40 => 3x = 45 => x = 15."
+    },
+    {
+        id: 1902,
+        text: "Hangi sayı asal değildir?",
+        options: ["2", "17", "23", "51", "53"],
+        correctIndex: 3,
+        explanation: "51 sayısı 3'e ve 17'ye bölünür (3*17 = 51). Diğerleri asaldır."
+    },
+    {
+        id: 1903,
+        text: "0,5 + 0,25 işleminin sonucu kesir olarak nedir?",
+        options: ["1/2", "3/4", "1/4", "2/3", "4/5"],
+        correctIndex: 1,
+        explanation: "0,5 = 1/2 (veya 2/4). 0,25 = 1/4. 2/4 + 1/4 = 3/4."
+    },
+    {
+        id: 1904,
+        text: "Karenin bir kenarı 10 cm ise, köşegen uzunluğu yaklaşık kaç cm'dir?",
+        options: ["10", "12", "14.1", "15", "20"],
+        correctIndex: 2,
+        explanation: "Köşegen = a * kök2. 10 * 1.41 = 14.1 cm."
+    },
+    {
+        id: 1905,
+        text: "Bir sınıfın mevcudu 30'dur. Kızların sayısı erkeklerin sayısının 2 katı ise kaç erkek vardır?",
+        options: ["5", "10", "15", "20", "25"],
+        correctIndex: 1,
+        explanation: "Erkek = x, Kız = 2x. Toplam 3x = 30 => x = 10 erkek."
+    },
+    {
+        id: 1906,
+        text: "Aşağıdaki kelimelerden hangisi 'Mecaz' anlamda kullanılmıştır? 'Arkadaşının *soğuk* tavırları onu üzdü.'",
+        options: ["Gerçek anlam", "Mecaz anlam", "Terim anlam", "Yan anlam", "Soyut anlam"],
+        correctIndex: 1,
+        explanation: "Soğuk kelimesi ısı olarak değil, ilgisiz/mesafeli anlamında kullanıldığı için mecazdır."
+    },
+    {
+        id: 1907,
+        text: "Zıt Anlamlılar: 'Cömert' kelimesinin zıttı nedir?",
+        options: ["Müsrif", "Bonkör", "Cimri", "Eliaçık", "Fakir"],
+        correctIndex: 2,
+        explanation: "Cömert'in zıttı Cimri'dir (Pinti)."
+    },
+    {
+        id: 1908,
+        text: "Mantık: 'Bütün kuşlar uçar. Penguen bir kuştur.' Bu önermelerden çıkan kesin sonuç nedir?",
+        options: ["Bütün kuşlar penguendir", "Penguen uçar", "Penguen uçamaz", "Kuşlar pengueni sever", "Hiçbiri"],
+        correctIndex: 1,
+        explanation: "Klasik mantık (Syllogism): 1. Kural: Bütün A'lar B yapar. 2. Durum: C, bir A'dır. Sonuç: C, B yapar. (Gerçek hayatta penguen uçamaz ama mantık sorusunda verilen öncüllere göre 'Penguen uçar' sonucu çıkar. Eğer soru 'Gerçek hayata göre' deseydi farklı olurdu. Mantık sorularında *verilen öncül* esastır. Öncül 'Bütün kuşlar uçar' demişse ve penguen kuşsa, o da uçar kabul edilir)."
+    },
+    {
+        id: 1909,
+        text: "Kelime İlişkisi: 'Gemi - Liman' ise 'Tren - ?'",
+        options: ["Yol", "Ray", "Gar", "Vagon", "Demir"],
+        correctIndex: 2,
+        explanation: "Gemi limanda durur/yolcu alır. Tren gar'da (istasyonda) durur."
+    },
+    {
+        id: 1910,
+        text: "Cümle Tamamlama: 'Başarılı olmak için sadece zeki olmak yetmez, aynı zamanda _______ gereklidir.'",
+        options: ["uyumak", "şanslı olmak", "çalışmak", "yemek", "gezmek"],
+        correctIndex: 2,
+        explanation: "Başarının en temel tamamlayıcısı çalışmaktır."
+    },
+    {
+        id: 1911,
+        text: "Görsel Dikkat: Aşağıdakilerden hangisi bir üçgen çeşidi DEĞİLDİR?",
+        options: ["Eşkenar", "İkizkenar", "Çeşitkenar", "Dik", "Dörtgen"],
+        correctIndex: 4,
+        explanation: "Dörtgen, 4 kenarlı bir çokgendir, üçgen değildir."
+    },
+    {
+        id: 1912,
+        text: "Bir sırada Ali önden 10., arkadan 15. sıradadır. Sırada kaç kişi vardır?",
+        options: ["24", "25", "26", "23", "20"],
+        correctIndex: 0,
+        explanation: "Sıra Mevcudu = (Önden sıra + Arkadan sıra) - 1. (10 + 15) - 1 = 24. (Ali'yi iki kere saydığımız için 1 çıkarırız)."
+    },
+    {
+        id: 1913,
+        text: "Aşağıdaki şehirlerden hangisi Türkiye'nin başkentidir?",
+        options: ["İstanbul", "İzmir", "Ankara", "Bursa", "Antalya"],
+        correctIndex: 2,
+        explanation: "Dikkat/Genel Kültür sorusu: Ankara."
+    },
+    {
+        id: 1914,
+        text: "Zorlu Mantık: Bir adamın fotoğrafına bakan kişi: 'Benim ne erkek ne de kız kardeşim var ama bu adamın babası benim babamın oğludur' diyor. Fotoğraftaki kimdir?",
+        options: ["Kendisidir", "Oğludur", "Babasır", "Torunudur", "Yeğenidir"],
+        correctIndex: 1,
+        explanation: "'Benim ne erkek ne kız kardeşim var' => Tek çocuğum. 'Benim babamın oğlu' => Benim (Tek çocuk olduğu için). Cümle şuna döner: 'Bu adamın babası BENİM'. Ben kimin babasıyım? OĞLUMUN. Fotoğraf OĞLUNA aittir."
+    },
+    {
+        id: 1915,
+        text: "Hangisi, 'Damlaya damlaya göl olur' atasözü ile aynı anlamdadır?",
+        options: ["Sakla samanı gelir zamanı", "İşleyen demir ışıldar", "Bir elin nesi var iki elin sesi var", "Emek olmadan yemek olmaz", "Azı karar çoğu zarar"],
+        correctIndex: 0,
+        explanation: "Damlaya damlaya göl olur ve Sakla samanı gelir zamanı, tasarruf ve birikimin önemini anlatan atasözleridir."
+    },
+    {
+        id: 1916,
+        text: "1, 1, 2, 3, 5, 8, 13, ? Serideki sonraki sayı nedir (Fibonacci)?",
+        options: ["15", "18", "21", "25", "20"],
+        correctIndex: 2,
+        explanation: "Fibonacci dizisi: Her sayı kendinden önceki iki sayının toplamıdır. 5+8=13. 8+13=21."
+    },
+    {
+        id: 1917,
+        text: "Hangi harf dikey olarak simetriktir (Aynada aynı görünür)?",
+        options: ["R", "L", "A", "G", "S"],
+        correctIndex: 2,
+        explanation: "A harfi dikey eksende simetriktir. (T, U, V, M gibi)."
+    },
+    {
+        id: 1918,
+        text: "Bir dikdörtgen masanın 4 köşesi vardır. Bir köşesini keserseniz kaç köşesi olur? (Düz kesim)",
+        options: ["3", "4", "5", "6", "2"],
+        correctIndex: 2,
+        explanation: "Bir köşeyi düz kestiğinizde o köşe yok olur ancak yerine iki yeni köşe (kesim noktaları) gelir. 4 - 1 + 2 = 5 köşe olur."
+    },
+    {
+        id: 1919,
+        text: "Veri Analizi: Bir sınıftaki öğrencilerin %60'ı matematik, %70'i Türkçe dersinden geçmiştir. Her iki dersten kalan %10 olduğuna göre, her iki dersten geçen yüzde kaçtır?",
+        options: ["%30", "%40", "%50", "%60", "%20"],
+        correctIndex: 1,
+        explanation: "Küme Problemi: Sınıf = 100x. Kalan (Dışarıda) = 10x. Geçenlerin Birleşimi (M U T) = 90x. (M U T) = M + T - (M n T). 90 = 60 + 70 - Kesişim. 90 = 130 - Kesişim. Kesişim = 40. Her iki dersten geçen %40."
+    },
+    {
+        id: 1920,
+        text: "Hangi grafik türü, bir bütünün parçalarını oransal olarak göstermek için en uygundur?",
+        options: ["Çizgi Grafiği", "Sütun Grafiği", "Daire (Pasta) Grafiği", "Serpilme Diyagramı", "Histogram"],
+        correctIndex: 2,
+        explanation: "Pasta grafik (Pie chart), oransal dağılımı (yüzdeleri) göstermek için en iyi araçtır."
+    },
+    {
+        id: 1921,
+        text: "Bir veri setindeki en büyük değer ile en küçük değer arasındaki farka ne denir?",
+        options: ["Mod (Tepe Değer)", "Medyan (Ortanca)", "Aritmetik Ortalama", "Açıklık (Range)", "Standart Sapma"],
+        correctIndex: 3,
+        explanation: "En büyük - En küçük = Açıklık (Range)."
+    },
+
+    // ─── DİJİTAL BANKACILIK & FINTECH (YENİ) ───
+    {
+        id: 2001,
+        text: "TCMB tarafından işletilen ve 7/24 anlık para transferine imkan sağlayan ödeme sistemi hangisidir?",
+        options: ["EFT", "Havale", "FAST (Fonların Anlık ve Sürekli Transferi)", "SWIFT", "Western Union"],
+        correctIndex: 2,
+        explanation: "7/24 çalışabilen ve anında gerçekleşen ödeme sistemi FAST'tir. EFT sadece mesai saatlerinde çalışır."
+    },
+    {
+        id: 2002,
+        text: "'Açık Bankacılık' (Open Banking) kavramı en özet haliyle nedir?",
+        options: ["Şubelerin 24 saat açık olması", "Müşterinin onayıyla finansal verilerin üçüncü taraf sağlayıcılarla (Turan, Papara vb.) paylaşılması", "Bankaların halka arz edilmesi", "Bankaların kapılarını herkese açması", "Kredi kartı limitinin sınırsız olması"],
+        correctIndex: 1,
+        explanation: "Açık Bankacılık, müşterinin izni dahilinde, finansal verilerin API'ler aracılığıyla güvenli bir şekilde üçüncü taraf uygulamalarla paylaşılması modelidir."
+    },
+    {
+        id: 2003,
+        text: "Türkiye'de ödemelerde 'Kripto Varlıkların' kullanılmasına ilişkin düzenleme nasıldır?",
+        options: ["Serbesttir", "Ödemelerde doğrudan veya dolaylı olarak kullanılması yasaktır", "Sadece Bitcoin kullanılabilir", "Vergisi ödenirse serbesttir", "Bankalar aracılığıyla serbesttir"],
+        correctIndex: 1,
+        explanation: "TCMB yönetmeliğine göre, kripto varlıkların ödemelerde doğrudan veya dolaylı şekilde kullanılması YASAKTIR. (Yatırım aracı olarak alınıp satılabilir ancak ödeme aracı olamaz)."
+    },
+    {
+        id: 2004,
+        text: "Karekod (QR Kod) ile ödeme standartlarını belirleyen ulusal yapı hangisidir?",
+        options: ["TR Karekod", "TR QR", "BKM QR", "TCMB Code", "Masterpass"],
+        correctIndex: 0,
+        explanation: "TCMB tarafından yayımlanan yönetmeliğe göre ulusal standart 'TR Karekod' olarak isimlendirilmiştir."
+    },
+    {
+        id: 2005,
+        text: "Dijital Cüzdan hizmeti sunan kuruluşlar (örn. Papara, İnilal) hangi kanuna tabidir?",
+        options: ["5411 Bankacılık Kanunu", "6493 Sayılı Ödeme ve Menkul Kıymet Mutabakat Sistemleri Kanunu", "Türk Ticaret Kanunu", "Borçlar Kanunu", "Sermaye Piyasası Kanunu"],
+        correctIndex: 1,
+        explanation: "Ödeme kuruluşları ve elektronik para kuruluşları 6493 sayılı kanun kapsamında düzenlenir ve TCMB denetimindedir."
+    },
+
+    // ─── MAKRO & FİNANS (İLERİ DÜZEY) ───
+    {
+        id: 2101,
+        text: "Devletin ihraç ettiği, döviz cinsinden (genelde USD veya EUR) uzun vadeli borçlanma senetlerine ne ad verilir?",
+        options: ["Hazine Bonosu", "Devlet Tahvili", "Eurobond", "Varant", "Sukuk"],
+        correctIndex: 2,
+        explanation: "Devletin veya şirketlerin yurtdışı piyasalardan yabancı para cinsinden borçlanmak için ihraç ettiği uzun vadeli tahvillere Eurobond denir."
+    },
+    {
+        id: 2102,
+        text: "Borsa İstanbul'da işlem gören ve gelecekteki bir tarihte, bugünden belirlenen fiyattan mal/kıymet alma-satma hakkı veren piyasa hangisidir?",
+        options: ["Spot Piyasa", "Tahvil Piyasası", "VİOP (Vadeli İşlem ve Opsiyon Piyasası)", "Serbest Piyasa", "Repo Piyasası"],
+        correctIndex: 2,
+        explanation: "Gelecek vadeli işlemlerin (Futures/Options) yapıldığı piyasa VİOP'tur."
+    },
+    {
+        id: 2103,
+        text: "Cari Açık ne demektir?",
+        options: ["Devletin vergi gelirlerinin harcamadan az olması", "Bir ülkenin yurtdışından aldığı mal ve hizmet bedelinin, sattığından (ihracat + turizm vb.) fazla olması", "Şirketlerin zarar etmesi", "Bankaların kredi verememesi", "Doların yükselmesi"],
+        correctIndex: 1,
+        explanation: "Cari Açık (Döviz Açığı), ülkenin döviz gelirlerinin döviz giderlerini karşılayamaması durumudur (İthalat > İhracat temel sebeptir)."
+    },
+    {
+        id: 2104,
+        text: "Basel kriterlerine göre 'Ana Sermaye' (Tier 1) içinde en kaliteli ve temel unsur hangisidir?",
+        options: ["Katkı Sermaye", "Ödenmiş Sermaye", "Yedek Akçeler", "Subordine Borçlar", "Maddi Duran Varlıklar"],
+        correctIndex: 1,
+        explanation: "Ana Sermayenin en temel unsuru 'Ödenmiş Sermaye'dir."
+    },
+    {
+        id: 2105,
+        text: "Bankacılıkta 'Mevduat Munzam Karşılığı' oranı artırılırsa bankalar için maliyet nasıl değişir?",
+        options: ["Değişmez", "Azalır", "Artar", "Sıfırlanır", "Karlılık artar"],
+        correctIndex: 2,
+        explanation: "Munzam karşılıkların artması, bankanın topladığı paranın daha büyük kısmını TCMB'ye faizsiz veya düşük faizle yatırması demektir. Bu da bankanın kullanabileceği kaynağı azaltır ve maliyeti ARTIRIR."
+    },
+
+    // ─── MANTIK & MUHAKEME (EKSTRA) ───
+    {
+        id: 2201,
+        text: "Saat 3'ü 15 geçe (03:15), akrep ile yelkovan arasındaki açı CİNSİNDEN hangisi doğrudur?",
+        options: ["0 derecedir (Üst üstedir)", "Dar açıdır", "Dik açıdır", "Geniş açıdır", "Doğru açıdır"],
+        correctIndex: 1,
+        explanation: "Yelkovan 3'ün üzerindedir (15 geçe). Akrep ise 3'ü biraz geçmiştir (3 ile 4 arasındadır). Aralarındaki fark çok küçüktür (yaklaşık 7.5 derece) bu yüzden DAR açıdır. (0 derece değildir çünkü akrep 3'te durmaz, ilerler)."
+    },
+    {
+        id: 2202,
+        text: "Mantık: 'Bazı A'lar B'dir. Bütün B'ler C'dir.' O halde hangisi KESİNLİKLE doğrudur?",
+        options: ["Bütün A'lar C'dir", "Bütün C'ler B'dir", "Bazı A'lar C'dir", "Hiçbir A, C değildir", "A ile C'nin alakası yoktur"],
+        correctIndex: 2,
+        explanation: "Bazı A'lar B ise (Kesişim var). Ve B'lerin hepsi C'nin içindeyse. O 'Bazı A' olan B'ler, otomatikman C'nin de içindedir. Yani 'Bazı A'lar C'dir'."
+    },
+    {
+        id: 2203,
+        text: "Bir musluk boş havuzu 10 saatte dolduruyor, dipteki musluk dolu havuzu 15 saatte boşaltıyor. İkisi aynı anda açılırsa boş havuz kaça saatte dolar?",
+        options: ["20", "25", "30", "35", "50"],
+        correctIndex: 2,
+        explanation: "1/10 - 1/15 = 3/30 - 2/30 = 1/30. Havuzun 1/30'u 1 saatte dolar. Tamamı 30 saatte dolar."
+    },
+    {
+        id: 2204,
+        text: "Veri Yorumlama: Bir ürünün fiyatı önce %50 artırılıp, sonra zamlı fiyat üzerinden %50 indirilirse son durum ne olur?",
+        options: ["Eski fiyata döner", "%25 Zarar/Düşüş", "%25 Kar/Artış", "%50 Zarar", "Değişmez"],
+        correctIndex: 1,
+        explanation: "100 TL -> %50 zam -> 150 TL. 150 TL -> %50 indirim (Yarısı 75 TL) -> 150 - 75 = 75 TL. Başlangıç 100, Son 75. %25 Düşüş (Zarar)."
+    },
+    {
+        id: 2205,
+        text: "Hangi kelime çifti arasındaki ilişki farklıdır?",
+        options: ["Üzüm - Asma", "Elma - Ağaç", "Karpuz - Bostan", "Gül - Diken", "Fındık - Ocak"],
+        correctIndex: 3,
+        explanation: "Üzüm asmada, Elma ağaçta, Karpuz bostanda, Fındık ocakta yetişir (Yetişme yeri ilişkisi). Gül-Diken ise parçası/koruyucusu ilişkisidir."
+    },
+
+    // ─── SINAV ÖZEL: İLERİ GENEL YETENEK (TAM PUAN HEDEFİ) ───
+    {
+        id: 3001,
+        text: "Operatör Sorusu: x ∆ y = 3x - 2y + 4 ve a ⨀ b = (a+b)/2 olarak tanımlanıyor. Buna göre (4 ∆ 3) ⨀ 8 işleminin sonucu kaçtır?",
+        options: ["8", "9", "10", "12", "15"],
+        correctIndex: 1,
+        explanation: "Önce parantez içi: 4 ∆ 3 = 3(4) - 2(3) + 4 = 12 - 6 + 4 = 10. Şimdi işlem (10) ⨀ 8'e döndü. 10 ⨀ 8 = (10+8)/2 = 18/2 = 9."
+    },
+    {
+        id: 3002,
+        text: "Fonksiyon: f(x) = 2x + 5 ve g(x) = x - 3 ise, (f o g)(4) kaçtır? (Bileşke Fonksiyon)",
+        options: ["5", "6", "7", "8", "9"],
+        correctIndex: 2,
+        explanation: "(f o g)(4) demek f(g(4)) demektir. Önce g(4)'ü bulalım: g(4) = 4 - 3 = 1. Şimdi f(1)'i bulalım: f(1) = 2(1) + 5 = 7."
+    },
+    {
+        id: 3003,
+        text: "Hız Problemi: A kentinden B kentine 60 km/s hızla giden bir araç, dönüşte hızını %50 artırarak geri dönmüştür. Gidiş-dönüş toplam 10 saat sürdüğüne göre, A ile B arası kaç km'dir?",
+        options: ["300", "360", "400", "450", "600"],
+        correctIndex: 1,
+        explanation: "Gidiş hızı V1 = 60. Dönüş hızı V2 = 60 + (60*0.50) = 90. Yol = x. Zamanlar toplamı: x/60 + x/90 = 10. Payda eşitle (180'de): 3x + 2x = 5x. 5x/180 = 10. 5x = 1800 => x = 360 km."
+    },
+    {
+        id: 3004,
+        text: "Olasılık: İki zar aynı anda atılıyor. Üst yüze gelen sayıların toplamının 8 olma olasılığı nedir?",
+        options: ["5/36", "1/6", "1/9", "4/36", "7/36"],
+        correctIndex: 0,
+        explanation: "Tüm durumlar 6*6 = 36. Toplamı 8 olan durumlar: (2,6), (3,5), (4,4), (5,3), (6,2). Toplam 5 durum var. Olasılık = 5/36."
+    },
+    {
+        id: 3005,
+        text: "Sözel Mantık (Sıralama): Bir yarışta Ayşe, Bora, Can, Derya ve Elif ilk 5 dereceyi paylaşmıştır. (1) Ayşe, Can'dan daha iyi bir derece yapmıştır. (2) Bora yarışın sonuncusudur. (3) Derya 2. olmuştur. (4) Elif, Ayşe'nin hemen arkasındadır. Birinci kimdir?",
+        options: ["Ayşe", "Bora", "Can", "Derya", "Elif"],
+        correctIndex: 2,
+        explanation: "Sıralama 1-2-3-4-5. 2. Derya. 5. Bora. Geriye 1, 3, 4 kaldı. Ayşe > Can (Ayşe, Can'dan iyi yani daha önde, derece olarak küçük sayı). Elif, Ayşe'nin hemen arkasında ise (Ayşe-Elif bloku). Eğer Ayşe 1 ise Elif 2 olmalı ama 2 dolu (Derya). O zaman Ayşe 3, Elif 4 olmak zorunda. Geriye 1. sıra kaldı: Can. Sıralama: 1. Can, 2. Derya, 3. Ayşe, 4. Elif, 5. Bora. Cevap Can."
+    },
+    {
+        id: 3006,
+        text: "Sayı Dizisi (Zor): 3, 7, 16, 35, 74, ? Soru işareti yerine ne gelmelidir?",
+        options: ["149", "150", "153", "148", "155"],
+        correctIndex: 2,
+        explanation: "Kural: x * 2 + 1, x * 2 + 2, x * 2 + 3... Kontrol: 3*2+1=7. 7*2+2=16. 16*2+3=35. 35*2+4=74. Sırada: 74*2+5 = 148+5 = 153."
+    },
+    {
+        id: 3007,
+        text: "Grafik Yorumlama: Bir ürünün satış fiyatı 120 TL'dir. Maliyet %20 azalıp kar marjı sabit tutulursa, yeni satış fiyatı ne olur? (Başlangıçta kar %20 varsayalım)",
+        options: ["96 TL", "100 TL", "104 TL", "110 TL", "Değişmez"],
+        correctIndex: 0,
+        explanation: "Eğer soru 'Maliyet üzerinden %20 karla satılıyor' deseydi: 1.2x = 120, x=100 (Maliyet). Maliyet %20 azalırsa: 80 TL olur. Yine %20 kar konulursa: 80 * 1.20 = 96 TL."
+    },
+    {
+        id: 3008,
+        text: "Mantık (Küp Sayma): 3x3x3 boyutlarında boyalı bir küp, 1x1x1'lik 27 küçük küpe ayrılıyor. Sadece TEK yüzü boyalı kaç küçük küp vardır?",
+        options: ["4", "6", "8", "12", "9"],
+        correctIndex: 1,
+        explanation: "Tek yüzü boyalı küpler, her yüzeyin TAM ORTASINDAKİ küplerdir. Küpün 6 yüzü vardır. Her yüzde 1 tane merkez küp vardır. 6 * 1 = 6 adet."
+    },
+    {
+        id: 3009,
+        text: "Soyut/Şekil: Bir kağıt kare şeklinde katlanıp ortasından deliniyor. Açıldığında kaç delik görünür? (2 kez katlama: Önce ikiye, sonra tekrar ikiye)",
+        options: ["1", "2", "4", "8", "16"],
+        correctIndex: 2,
+        explanation: "Kağıt 2 kez katlandığında (örneğin dörde katlanmış olur), kağıt 4 katlı hale gelir. Bir delik delindiğinde tüm katmanlar delinir. Açıldığında 4 delik oluşur."
+    },
+    {
+        id: 3010,
+        text: "Yaş Problemi: Bir annenin yaşı, iki çocuğunun yaşları farkının 5 katıdır. 8 yıl sonra annenin yaşı yaşları farkının 6 katı olacağına göre, anne bugün kaç yaşındadır? (Yaş farkı değişmez!)",
+        options: ["30", "35", "40", "45", "50"],
+        correctIndex: 2,
+        explanation: "Yaş farkı sabittir, x diyelim. Bugün Anne = 5x. 8 yıl sonra Anne = 5x + 8. Denklem: 5x + 8 = 6x (Çünkü yaş farkı değişmez, yine x'tir). Buradan x = 8. Anne = 5x = 5 * 8 = 40 yaşındadır."
+    },
+
+    // ─── DİKKAT VE HIZ TESTİ (GARANTİ PAKETİ) ───
+    {
+        id: 4001,
+        text: "Dikkat: Aşağıdaki kodlardan hangisi diğerlerinden farklıdır?",
+        options: ["X8J9K2L", "X8J9K2L", "X8J9K2L", "X8J9K3L", "X8J9K2L"],
+        correctIndex: 3,
+        explanation: "Dördüncü seçenekteki kodda '2' yerine '3' rakamı kullanılmıştır (X8J9K3L). Diğerleri X8J9K2L'dir."
+    },
+    {
+        id: 4002,
+        text: "Yazım Yanlışı: Aşağıdaki cümlelerin hangisinde yazım yanlışı yapılmıştır?",
+        options: ["Herkes buraya gelsin.", "Hiçbir şey beni üzmez.", "Tabi ki gelirim.", "Akşam bize gelecek misin?", "Türkçeyi çok seviyorum."],
+        correctIndex: 2,
+        explanation: "'Tabi ki' yanlış yazılmıştır. Bağlaç olan 'ki' ayrı yazılır ancak 'Tabii ki' şeklinde yazılmalıdır (veya Tabi ki ayrı yazılsa bile 'Tabii' kelimesi iki 'i' iledir, ama buradaki temel hata 'ki'nin kullanımı veya kelime köküdür. Doğrusu: Tabii ki). C şıkkı hatalıdır."
+    },
+    {
+        id: 4003,
+        text: "İşlem Hızı: 2 + 3 x 4 - 10 / 2 = ? (İşlem önceliğine dikkat!)",
+        options: ["5", "9", "10", "14", "7"],
+        correctIndex: 1,
+        explanation: "Önce çarpma ve bölme: 3x4=12, 10/2=5. İşlem: 2 + 12 - 5. Sonra toplama/çıkarma: 14 - 5 = 9."
+    },
+    {
+        id: 4004,
+        text: "Sayma: 'Muvaffakiyetsizleştiricileştiriveremeyebileceklerimizdenmişsinizcesine' kelimesinde kaç tane 'e' harfi vardır?",
+        options: ["8", "9", "10", "11", "12"],
+        correctIndex: 2,
+        explanation: "Gözle hızlı tarama: Hızlıca sayalım... Toplam 10 adet 'e' harfi vardır."
+    },
+    {
+        id: 4005,
+        text: "Eşleştirme: Aşağıdaki İl-Plaka eşleştirmelerinden hangisi YANLIŞTIR?",
+        options: ["06 - Ankara", "34 - İstanbul", "35 - İzmir", "01 - Adana", "16 - Balıkesir"],
+        correctIndex: 4,
+        explanation: "16 plakası Bursa'ya aittir. Balıkesir'in plakası 10'dur."
+    },
+    {
+        id: 4006,
+        text: "Talimat Takibi: Eğer bugün Salı ise bir önceki günün 3 gün sonrası hangi gündür?",
+        options: ["Çarşamba", "Perşembe", "Cuma", "Cumartesi", "Pazar"],
+        correctIndex: 1,
+        explanation: "Bugün Salı. Bir önceki gün: Pazartesi. Pazartesi'den 3 gün sonrası: Salı(1), Çarşamba(2), Perşembe(3). (Pazartesi + 3 = Perşembe)."
+    },
+    {
+        id: 4007,
+        text: "Görsel Hafıza (Metin Tabanlı): 'KIRMIZI - MAVİ - SARI - YEŞİL - BEYAZ'. Bu sırayı aklınızda tutun. Şıklardan hangisi bu sıranın TERSTEN yazılışıdır?",
+        options: ["BEYAZ - YEŞİL - SARI - MAVİ - KIRMIZI", "BEYAZ - SARI - YEŞİL - MAVİ - KIRMIZI", "KIRMIZI - MAVİ - YEŞİL - SARI - BEYAZ", "YEŞİL - BEYAZ - SARI - MAVİ - KIRMIZI", "BEYAZ - YEŞİL - MAVİ - SARI - KIRMIZI"],
+        correctIndex: 0,
+        explanation: "Sıranın tersi: BEYAZ - YEŞİL - SARI - MAVİ - KIRMIZI."
+    },
+    {
+        id: 4008,
+        text: "Mantıksal Çıkarım: 'A > B ve B > C ise, aşağıdakilerden hangisi kesinlikle doğrudur?'",
+        options: ["A < C", "A = C", "A > C", "A = B", "B < C"],
+        correctIndex: 2,
+        explanation: "Geçişme özelliği: A, B'den büyük, B de C'den büyükse; A, C'den kesinlikle büyüktür."
+    },
+    {
+        id: 4009,
+        text: "Dikkat/Odaklanma: Aşağıdaki sayı dizisinde kaç adet '9' rakamı, bir '6' rakamından hemen SONRA gelmektedir? \n'691236945698769'",
+        options: ["1", "2", "3", "4", "5"],
+        correctIndex: 3,
+        explanation: "Diziye bakalım: 69... (1), ...69... (2), ...69... (3), ...69 (4). Toplam 4 kez."
+    },
+    {
+        id: 4010,
+        text: "Genel Kültür/Hız: Aşağıdakilerden hangisi bir yön DEĞİLDİR?",
+        options: ["Kuzey", "Güney", "Lodos", "Doğu", "Batı"],
+        correctIndex: 2,
+        explanation: "Lodos bir rüzgar türüdür, ana veya ara yön değildir."
     }
 ];
+
+// ─── SORU HAVUZU BİRLEŞTİRME ─────────────────────
+export const sampleQuestions: Question[] = [...baseQuestions, ...expansionQuestions];

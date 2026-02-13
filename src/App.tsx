@@ -10,6 +10,9 @@ import InterviewPrep from './pages/InterviewPrep';
 import LectureView from './pages/LectureView';
 import Stats from './pages/Stats';
 import Profile from './pages/Profile';
+import MockExam from './pages/MockExam';
+import CheatSheet from './pages/CheatSheet';
+import BulkImport from './pages/BulkImport';
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
           <Route path="lecture/:topicId" element={<LectureView />} />
           <Route path="stats" element={<Stats />} />
           <Route path="quiz/:topicId" element={<QuizPage />} />
+          <Route path="mock-exam" element={<MockExam />} />
+          <Route path="cheat-sheet" element={<CheatSheet />} />
+          <Route path="bulk-import" element={<BulkImport />} />
           <Route path="profile" element={<Profile />} />
         </Route>
       </Routes>

@@ -17,7 +17,9 @@ const MainLayout: React.FC = () => {
     return (
         <div className="flex flex-col h-screen bg-slate-900 text-slate-50 overflow-hidden font-sans">
             {/* Top Bar */}
-            <header className="px-6 py-4 flex justify-between items-center bg-slate-900/80 backdrop-blur-md border-b border-slate-800 z-10 sticky top-0">
+            <header className="px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center bg-slate-900/80 backdrop-blur-md border-b border-slate-800 z-10 sticky top-0"
+                style={{ paddingTop: 'max(env(safe-area-inset-top), 0.75rem)' }}
+            >
                 <div>
                     <h1 className="text-xl font-bold bg-gradient-to-r from-sky-400 to-indigo-400 bg-clip-text text-transparent">
                         ExamMaster
@@ -30,15 +32,17 @@ const MainLayout: React.FC = () => {
             </header>
 
             {/* Main Content Area */}
-            <main className="flex-1 overflow-y-auto pb-24 px-4 py-6 scroll-smooth">
-                <div className="max-w-md mx-auto w-full">
+            <main className="flex-1 overflow-y-auto pb-24 px-3 sm:px-4 py-4 sm:py-6 scroll-smooth">
+                <div className="max-w-md sm:max-w-lg md:max-w-2xl mx-auto w-full">
                     <Outlet />
                 </div>
             </main>
 
             {/* Bottom Navigation */}
-            <nav className="fixed bottom-0 w-full bg-slate-900/90 backdrop-blur-lg border-t border-slate-800 pb-safe">
-                <div className="flex justify-around items-center h-16 max-w-md mx-auto">
+            <nav className="fixed bottom-0 w-full bg-slate-900/90 backdrop-blur-lg border-t border-slate-800"
+                style={{ paddingBottom: 'max(env(safe-area-inset-bottom), 0px)' }}
+            >
+                <div className="flex justify-around items-center h-16 max-w-md sm:max-w-lg mx-auto">
                     {navItems.map((item) => {
                         const Icon = item.icon;
                         const isActive = location.pathname === item.path;
