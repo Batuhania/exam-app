@@ -29,7 +29,6 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ questions, topicName, topicId, 
     const correctCount = selectedAnswers.filter((a, i) => a === questions[i].correctIndex).length;
     const wrongCount = selectedAnswers.filter((a, i) => a !== null && a !== questions[i].correctIndex).length;
 
-    // Timer
     useEffect(() => {
         if (isFinished) return;
         const timer = setInterval(() => setElapsedSeconds(s => s + 1), 1000);
@@ -58,7 +57,7 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ questions, topicName, topicId, 
         setCurrentIndex(index);
         setIsAnswered(selectedAnswers[index] !== null);
         setShowExplanation(selectedAnswers[index] !== null);
-        setQuestionKey(prev => prev + 1); // Trigger re-animation
+        setQuestionKey(prev => prev + 1);
     };
 
     const handleFinish = () => {
@@ -80,25 +79,25 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ questions, topicName, topicId, 
 
         return (
             <div className="flex flex-col items-center justify-center space-y-6 py-8 animate-fade-in">
-                <div className="w-32 h-32 rounded-full border-4 border-emerald-500/30 flex items-center justify-center bg-emerald-500/10 relative animate-celebration">
-                    <span className="text-4xl font-bold text-emerald-400">%{percentage}</span>
+                <div className="w-32 h-32 rounded-full border-4 border-emerald-200 dark:border-emerald-700 flex items-center justify-center bg-emerald-50 dark:bg-emerald-900/30 relative animate-celebration">
+                    <span className="text-4xl font-bold text-emerald-600 dark:text-emerald-400">%{percentage}</span>
                     <span className="absolute -bottom-2 bg-emerald-600 text-white text-xs px-2 py-0.5 rounded-full animate-bounce-in" style={{ animationDelay: '0.4s' }}>BAŞARI</span>
                 </div>
-                <h2 className="text-2xl font-bold text-white">Test Tamamlandı!</h2>
-                <p className="text-slate-400">Süre: {formatTime(elapsedSeconds)}</p>
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Test Tamamlandı!</h2>
+                <p className="text-gray-500 dark:text-gray-400">Süre: {formatTime(elapsedSeconds)}</p>
 
                 <div className="grid grid-cols-3 gap-4 w-full max-w-sm">
-                    <div className="bg-emerald-500/10 rounded-xl p-4 text-center border border-emerald-500/20 animate-bounce-in" style={{ animationDelay: '0.2s' }}>
-                        <p className="text-2xl font-bold text-emerald-400">{correct}</p>
-                        <p className="text-xs text-slate-400 mt-1">Doğru</p>
+                    <div className="bg-emerald-50 dark:bg-emerald-900/30 rounded-xl p-4 text-center border border-emerald-200 dark:border-emerald-700 animate-bounce-in" style={{ animationDelay: '0.2s' }}>
+                        <p className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">{correct}</p>
+                        <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Doğru</p>
                     </div>
-                    <div className="bg-rose-500/10 rounded-xl p-4 text-center border border-rose-500/20 animate-bounce-in" style={{ animationDelay: '0.35s' }}>
-                        <p className="text-2xl font-bold text-rose-400">{wrong}</p>
-                        <p className="text-xs text-slate-400 mt-1">Yanlış</p>
+                    <div className="bg-red-50 dark:bg-red-900/30 rounded-xl p-4 text-center border border-red-200 dark:border-red-700 animate-bounce-in" style={{ animationDelay: '0.35s' }}>
+                        <p className="text-2xl font-bold text-red-500 dark:text-red-400">{wrong}</p>
+                        <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Yanlış</p>
                     </div>
-                    <div className="bg-slate-500/10 rounded-xl p-4 text-center border border-slate-500/20 animate-bounce-in" style={{ animationDelay: '0.5s' }}>
-                        <p className="text-2xl font-bold text-slate-400">{empty}</p>
-                        <p className="text-xs text-slate-400 mt-1">Boş</p>
+                    <div className="bg-gray-50 dark:bg-gray-700 rounded-xl p-4 text-center border border-gray-200 dark:border-gray-600 animate-bounce-in" style={{ animationDelay: '0.5s' }}>
+                        <p className="text-2xl font-bold text-gray-500 dark:text-gray-400">{empty}</p>
+                        <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Boş</p>
                     </div>
                 </div>
 
@@ -112,7 +111,7 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ questions, topicName, topicId, 
                     </button>
                     <button
                         onClick={onBack}
-                        className="w-full px-6 py-3 bg-slate-700 text-slate-200 rounded-xl font-medium hover:bg-slate-600 transition active:scale-95"
+                        className="w-full px-6 py-3 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-xl font-medium hover:bg-gray-200 dark:hover:bg-gray-600 transition active:scale-95"
                     >
                         Ana Sayfaya Dön
                     </button>
@@ -126,11 +125,11 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ questions, topicName, topicId, 
             {/* Header */}
             <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center space-x-3">
-                    <button onClick={onBack} className="p-2 rounded-lg hover:bg-slate-800 transition">
-                        <ChevronLeft className="w-5 h-5 text-slate-400" />
+                    <button onClick={onBack} className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                        <ChevronLeft className="w-5 h-5 text-gray-400 dark:text-gray-500" />
                     </button>
                     <div className="truncate max-w-[180px]">
-                        <p className="text-sm font-semibold text-white truncate">{topicName}</p>
+                        <p className="text-sm font-semibold text-gray-900 dark:text-white truncate">{topicName}</p>
                     </div>
                 </div>
                 <div className="flex items-center space-x-3">
@@ -140,11 +139,11 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ questions, topicName, topicId, 
                             f[currentIndex] = !f[currentIndex];
                             setFlagged(f);
                         }}
-                        className={clsx("p-2 rounded-lg transition", flagged[currentIndex] ? "text-amber-400 bg-amber-500/10" : "text-slate-500 hover:text-slate-300")}
+                        className={clsx("p-2 rounded-lg transition", flagged[currentIndex] ? "text-amber-500 bg-amber-50 dark:bg-amber-900/30" : "text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300")}
                     >
                         <Flag className="w-5 h-5" />
                     </button>
-                    <button className="p-2 rounded-lg text-slate-500 hover:text-slate-300 transition">
+                    <button className="p-2 rounded-lg text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition">
                         <BarChart2 className="w-5 h-5" />
                     </button>
                     <button
@@ -153,7 +152,7 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ questions, topicName, topicId, 
                             f[currentIndex] = !f[currentIndex];
                             setFavorited(f);
                         }}
-                        className={clsx("p-2 rounded-lg transition", favorited[currentIndex] ? "text-rose-400 bg-rose-500/10" : "text-slate-500 hover:text-slate-300")}
+                        className={clsx("p-2 rounded-lg transition", favorited[currentIndex] ? "text-red-500 bg-red-50 dark:bg-red-900/30" : "text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300")}
                     >
                         <Heart className={clsx("w-5 h-5", favorited[currentIndex] && "fill-current")} />
                     </button>
@@ -161,33 +160,33 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ questions, topicName, topicId, 
             </div>
 
             {/* Info Bar */}
-            <div className="flex items-center justify-between bg-slate-800/60 rounded-xl px-4 py-2.5 mb-5 border border-slate-700/50">
-                <div className="flex items-center space-x-2 text-slate-400 text-sm">
+            <div className="flex items-center justify-between bg-white dark:bg-gray-800 rounded-xl px-4 py-2.5 mb-5 border border-gray-200 dark:border-gray-700 shadow-sm">
+                <div className="flex items-center space-x-2 text-gray-500 dark:text-gray-400 text-sm">
                     <Clock className="w-4 h-4" />
                     <span className="font-mono">{formatTime(elapsedSeconds)}</span>
                 </div>
-                <div className="text-sm font-medium text-slate-300">
-                    <span className="text-sky-400">{currentIndex + 1}</span> / {questions.length}
+                <div className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                    <span className="text-emerald-600 dark:text-emerald-400">{currentIndex + 1}</span> / {questions.length}
                 </div>
                 <div className="text-sm">
-                    <span className="text-emerald-400 font-medium">{correctCount} doğru</span>
-                    <span className="text-slate-600 mx-1">/</span>
-                    <span className="text-rose-400 font-medium">{wrongCount} yanlış</span>
+                    <span className="text-emerald-600 dark:text-emerald-400 font-medium">{correctCount} doğru</span>
+                    <span className="text-gray-300 dark:text-gray-600 mx-1">/</span>
+                    <span className="text-red-500 dark:text-red-400 font-medium">{wrongCount} yanlış</span>
                 </div>
             </div>
 
             {/* Question Card */}
-            <div key={questionKey} className="bg-slate-800/40 rounded-2xl p-5 mb-5 border border-slate-700/50 animate-fade-in-up">
+            <div key={questionKey} className="bg-white dark:bg-gray-800 rounded-xl p-5 mb-5 border border-gray-200 dark:border-gray-700 shadow-sm animate-fade-in-up">
                 {currentQuestion.image && (
-                    <div className="mb-4 rounded-xl overflow-hidden border border-slate-700/50">
+                    <div className="mb-4 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700">
                         <img
                             src={currentQuestion.image}
                             alt="Soru görseli"
-                            className="w-full h-auto object-contain max-h-64 bg-slate-900/50"
+                            className="w-full h-auto object-contain max-h-64 bg-gray-50 dark:bg-gray-900"
                         />
                     </div>
                 )}
-                <p className="text-white font-medium leading-relaxed text-[15px]">
+                <p className="text-gray-900 dark:text-white font-medium leading-relaxed text-[15px]">
                     {currentQuestion.text}
                 </p>
             </div>
@@ -199,13 +198,13 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ questions, topicName, topicId, 
                     const isCorrect = idx === currentQuestion.correctIndex;
                     const showResult = isAnswered;
 
-                    let optionStyle = "bg-slate-800/30 border-slate-700/50 text-slate-200 hover:bg-slate-800/60 hover:border-slate-600";
+                    let optionStyle = "bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-750 hover:border-gray-300 dark:hover:border-gray-600";
                     if (showResult && isCorrect) {
-                        optionStyle = "bg-emerald-500/15 border-emerald-500/40 text-emerald-300";
+                        optionStyle = "bg-emerald-50 dark:bg-emerald-900/30 border-emerald-300 dark:border-emerald-600 text-emerald-800 dark:text-emerald-300";
                     } else if (showResult && isSelected && !isCorrect) {
-                        optionStyle = "bg-rose-500/15 border-rose-500/40 text-rose-300";
+                        optionStyle = "bg-red-50 dark:bg-red-900/30 border-red-300 dark:border-red-600 text-red-700 dark:text-red-300";
                     } else if (isSelected && !showResult) {
-                        optionStyle = "bg-sky-500/15 border-sky-500/40 text-sky-300";
+                        optionStyle = "bg-blue-50 dark:bg-blue-900/30 border-blue-300 dark:border-blue-600 text-blue-700 dark:text-blue-300";
                     }
 
                     return (
@@ -214,7 +213,7 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ questions, topicName, topicId, 
                             onClick={() => handleSelectAnswer(idx)}
                             disabled={isAnswered}
                             className={clsx(
-                                "w-full text-left rounded-xl p-4 border transition-all flex items-start space-x-3",
+                                "w-full text-left rounded-xl p-4 border transition-all flex items-start space-x-3 shadow-sm",
                                 optionStyle,
                                 isAnswered && "cursor-default"
                             )}
@@ -222,8 +221,8 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ questions, topicName, topicId, 
                             <span className={clsx(
                                 "flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold",
                                 showResult && isCorrect ? "bg-emerald-500 text-white" :
-                                    showResult && isSelected && !isCorrect ? "bg-rose-500 text-white" :
-                                        "bg-slate-700/50 text-slate-400"
+                                    showResult && isSelected && !isCorrect ? "bg-red-500 text-white" :
+                                        "bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400"
                             )}>
                                 {optionLabels[idx]}
                             </span>
@@ -235,22 +234,21 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ questions, topicName, topicId, 
 
             {/* Explanation */}
             {showExplanation && (
-                <div className="bg-sky-500/5 rounded-2xl p-5 border border-sky-500/20 mb-5 animate-fade-in-up">
-                    <h4 className="text-sky-400 font-bold text-sm mb-2">📖 Çözüm:</h4>
-                    <p className="text-slate-300 text-sm leading-relaxed mb-3">
+                <div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-5 border border-blue-200 dark:border-blue-800 mb-5 animate-fade-in-up">
+                    <h4 className="text-blue-700 dark:text-blue-400 font-bold text-sm mb-2">📖 Çözüm:</h4>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-3">
                         {currentQuestion.explanation}
                     </p>
 
-                    {/* Lecture Suggestion on Wrong Answer */}
                     {selectedAnswers[currentIndex] !== currentQuestion.correctIndex && topicId && (
-                        <div className="mt-4 pt-3 border-t border-sky-500/20">
+                        <div className="mt-4 pt-3 border-t border-blue-200 dark:border-blue-700">
                             <button
                                 onClick={() => navigate(`/lecture/${topicId}`)}
-                                className="flex items-center space-x-2 text-sky-400 hover:text-sky-300 transition group p-2 rounded-lg hover:bg-sky-500/10 w-full"
+                                className="flex items-center space-x-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition group p-2 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 w-full"
                             >
                                 <BookOpen className="w-5 h-5 flex-shrink-0" />
                                 <div className="text-left">
-                                    <p className="text-xs font-medium text-slate-400 group-hover:text-sky-200">Bu konuda eksiğin olabilir</p>
+                                    <p className="text-xs font-medium text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400">Bu konuda eksiğin olabilir</p>
                                     <p className="text-sm font-bold">İlgili Konu Anlatımına Git</p>
                                 </div>
                             </button>
@@ -260,13 +258,13 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ questions, topicName, topicId, 
             )}
 
             {/* Navigation */}
-            <div className="flex items-center justify-between pt-2 pb-4 border-t border-slate-800">
+            <div className="flex items-center justify-between pt-2 pb-4 border-t border-gray-200 dark:border-gray-700">
                 <button
                     onClick={() => goToQuestion(currentIndex - 1)}
                     disabled={currentIndex === 0}
                     className={clsx(
                         "flex items-center space-x-1 px-4 py-2.5 rounded-xl font-medium text-sm transition",
-                        currentIndex === 0 ? "text-slate-600 cursor-not-allowed" : "text-slate-300 hover:bg-slate-800"
+                        currentIndex === 0 ? "text-gray-300 dark:text-gray-600 cursor-not-allowed" : "text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700"
                     )}
                 >
                     <ChevronLeft className="w-4 h-4" />
@@ -276,14 +274,14 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ questions, topicName, topicId, 
                 {currentIndex === questions.length - 1 ? (
                     <button
                         onClick={handleFinish}
-                        className="px-6 py-2.5 bg-emerald-500 text-white rounded-xl font-medium text-sm hover:bg-emerald-600 transition active:scale-95"
+                        className="px-6 py-2.5 bg-emerald-600 text-white rounded-xl font-medium text-sm hover:bg-emerald-700 transition active:scale-95"
                     >
                         Bitir
                     </button>
                 ) : (
                     <button
                         onClick={() => goToQuestion(currentIndex + 1)}
-                        className="flex items-center space-x-1 px-4 py-2.5 rounded-xl font-medium text-sm text-slate-300 hover:bg-slate-800 transition"
+                        className="flex items-center space-x-1 px-4 py-2.5 rounded-xl font-medium text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
                     >
                         <span>Sonraki</span>
                         <ChevronRight className="w-4 h-4" />

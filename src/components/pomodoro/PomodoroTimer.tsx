@@ -12,7 +12,6 @@ const PomodoroTimer: React.FC = () => {
     const currentSeconds = minutes * 60 + seconds;
     const progress = ((totalSeconds - currentSeconds) / totalSeconds) * 100;
 
-    // Circumference for SVG circle
     const radius = 120;
     const circumference = 2 * Math.PI * radius;
     const strokeDashoffset = circumference - (progress / 100) * circumference;
@@ -27,7 +26,6 @@ const PomodoroTimer: React.FC = () => {
                         setMinutes(minutes - 1);
                     } else {
                         setIsActive(false);
-                        // Zamanlayıcı tamamlandı
                     }
                 } else {
                     setSeconds(seconds - 1);
@@ -61,10 +59,10 @@ const PomodoroTimer: React.FC = () => {
     return (
         <div className="flex flex-col items-center justify-center space-y-8">
             {/* Mode Switcher */}
-            <div className="flex p-1 bg-slate-800 rounded-2xl">
+            <div className="flex p-1 bg-gray-100 dark:bg-gray-800 rounded-2xl">
                 <button
                     onClick={() => switchMode('work')}
-                    className={clsx("px-4 py-2 rounded-xl text-sm font-medium transition", mode === 'work' ? "bg-orange-500 text-white shadow-lg" : "text-slate-400 hover:text-slate-200")}
+                    className={clsx("px-4 py-2 rounded-xl text-sm font-medium transition", mode === 'work' ? "bg-orange-500 text-white shadow-sm" : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200")}
                 >
                     <div className="flex items-center space-x-2">
                         <Briefcase className="w-4 h-4" />
@@ -73,7 +71,7 @@ const PomodoroTimer: React.FC = () => {
                 </button>
                 <button
                     onClick={() => switchMode('short')}
-                    className={clsx("px-4 py-2 rounded-xl text-sm font-medium transition", mode === 'short' ? "bg-emerald-500 text-white shadow-lg" : "text-slate-400 hover:text-slate-200")}
+                    className={clsx("px-4 py-2 rounded-xl text-sm font-medium transition", mode === 'short' ? "bg-emerald-500 text-white shadow-sm" : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200")}
                 >
                     <div className="flex items-center space-x-2">
                         <Coffee className="w-4 h-4" />
@@ -82,16 +80,15 @@ const PomodoroTimer: React.FC = () => {
                 </button>
                 <button
                     onClick={() => switchMode('long')}
-                    className={clsx("px-4 py-2 rounded-xl text-sm font-medium transition", mode === 'long' ? "bg-blue-500 text-white shadow-lg" : "text-slate-400 hover:text-slate-200")}
+                    className={clsx("px-4 py-2 rounded-xl text-sm font-medium transition", mode === 'long' ? "bg-blue-500 text-white shadow-sm" : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200")}
                 >
                     <span>Uzun Mola</span>
                 </button>
             </div>
 
             {/* Timer Circle */}
-            <div className="relative w-80 h-80 flex items-center justify-center">
-                {/* Background Circle */}
-                <svg className="absolute top-0 left-0 w-full h-full transform -rotate-90 drop-shadow-2xl">
+            <div className="relative w-full max-w-[280px] aspect-square flex items-center justify-center mx-auto">
+                <svg className="absolute top-0 left-0 w-full h-full transform -rotate-90" viewBox="0 0 320 320">
                     <circle
                         cx="160"
                         cy="160"
@@ -99,7 +96,7 @@ const PomodoroTimer: React.FC = () => {
                         stroke="currentColor"
                         strokeWidth="12"
                         fill="transparent"
-                        className="text-slate-800"
+                        className="text-gray-200 dark:text-gray-700"
                     />
                     <circle
                         cx="160"
@@ -119,10 +116,10 @@ const PomodoroTimer: React.FC = () => {
 
                 {/* Time Text */}
                 <div className="text-center z-10">
-                    <div className="text-7xl font-bold text-white tracking-widest font-mono">
+                    <div className="text-7xl font-bold text-gray-900 dark:text-white tracking-widest font-mono">
                         {String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}
                     </div>
-                    <p className="text-slate-400 mt-2 font-medium tracking-widest uppercase text-sm">
+                    <p className="text-gray-400 dark:text-gray-500 mt-2 font-medium tracking-widest uppercase text-sm">
                         {isActive ? 'ODAKLAN' : 'DURAKLATILDI'}
                     </p>
                 </div>
@@ -132,7 +129,7 @@ const PomodoroTimer: React.FC = () => {
             <div className="flex items-center space-x-6">
                 <button
                     onClick={resetTimer}
-                    className="p-4 rounded-full bg-slate-800 text-slate-400 hover:text-white transition"
+                    className="p-4 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition"
                 >
                     <RotateCcw className="w-6 h-6" />
                 </button>
@@ -140,8 +137,8 @@ const PomodoroTimer: React.FC = () => {
                 <button
                     onClick={toggleTimer}
                     className={clsx(
-                        "w-20 h-20 rounded-full flex items-center justify-center transition shadow-xl active:scale-95",
-                        isActive ? "bg-slate-700 text-white" : "bg-white text-slate-900"
+                        "w-20 h-20 rounded-full flex items-center justify-center transition shadow-lg active:scale-95",
+                        isActive ? "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300" : "bg-gray-900 dark:bg-white text-white dark:text-gray-900"
                     )}
                 >
                     {isActive ? <Pause className="w-8 h-8 fill-current" /> : <Play className="w-8 h-8 fill-current ml-1" />}

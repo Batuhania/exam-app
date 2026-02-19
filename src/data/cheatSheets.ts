@@ -65,5 +65,123 @@ export const cheatSheets: CheatSheetSection[] = [
             { title: "Net İşletme Sermayesi", content: "Dönen Varlıklar - Kısa Vadeli Yabancı Kaynaklar." },
             { title: "Hesap İşleyişi", content: "Varlık hesapları borçtan, Kaynak hesapları alacaktan çalışır." }
         ]
+    },
+    {
+        id: 6,
+        title: "Anayasa Hukuku - Kritik Maddeler",
+        category: "Hukuk",
+        items: [
+            { title: "Değiştirilemez Maddeler", content: "İlk **3 madde** değiştirilemez (m.4). Devlet şekli, nitelikleri, bütünlüğü.", highlight: true },
+            { title: "Temel Hakların Sınırlandırılması", content: "Ancak **kanunla**, Anayasa'nın sözüne uygun, **ölçülülük ilkesi** çerçevesinde sınırlanabilir (m.13)." },
+            { title: "Milletvekili Sayısı", content: "TBMM **600** milletvekilinden oluşur (m.75)." },
+            { title: "Seçim Dönemi", content: "TBMM seçimleri **5 yılda** bir yapılır (m.77)." },
+            { title: "Anayasa Değişikliği Teklifi", content: "TBMM üye tamsayısının en az **1/3'ü** tarafından yazıyla teklif edilir (m.175)." },
+            { title: "Cumhurbaşkanlığı Kararnamesi", content: "Temel haklar, kişi hakları ve siyasi haklar CBK ile **düzenlenemez** (m.104)." }
+        ]
+    },
+    {
+        id: 7,
+        title: "Borçlar Hukuku - Zamanaşımı Süreleri",
+        category: "Hukuk",
+        items: [
+            { title: "Genel Zamanaşımı", content: "**10 yıl** (TBK m.146).", highlight: true },
+            { title: "Haksız Fiil", content: "Öğrenmeden itibaren **2 yıl**, her hâlde **10 yıl** (m.72)." },
+            { title: "Kira/Faiz/Ücret Alacakları", content: "**5 yıl** (m.147)." },
+            { title: "Sebepsiz Zenginleşme", content: "Öğrenmeden itibaren **2 yıl**, her hâlde **10 yıl** (m.82)." },
+            { title: "Sözleşme Şekli", content: "Kural: **Şekil serbestisi**. Kanun aksini öngörmedikçe herhangi şekilde yapılabilir (m.12)." },
+            { title: "Kefalet Şekli", content: "Yazılı şekil + azami miktarın ve tarihin belirtilmesi **zorunlu** (m.583)." }
+        ]
+    },
+    {
+        id: 8,
+        title: "İcra İflas Hukuku - Süreler",
+        category: "Hukuk",
+        items: [
+            { title: "Ödeme Emrine İtiraz", content: "**7 gün** içinde (İİK m.62).", highlight: true },
+            { title: "İcra Emrine İtiraz", content: "**7 gün** içinde (ilamlı takip)." },
+            { title: "Taşınır Satış İsteme", content: "Hacizden itibaren **6 ay** (m.106)." },
+            { title: "Taşınmaz Satış İsteme", content: "Hacizden itibaren **1 yıl** (m.106)." },
+            { title: "İcra İnkar Tazminatı", content: "Borç miktarının **%20'sinden** az olamaz (m.67)." },
+            { title: "Aciz Vesikası Zamanaşımı", content: "**20 yıl** (m.143)." }
+        ]
+    },
+    {
+        id: 9,
+        title: "Basel I/II/III Karşılaştırması",
+        category: "Finans",
+        items: [
+            { title: "Basel I (1988)", content: "Sadece kredi riski. Asgari SYR: **%8**. Basit risk ağırlıkları (%0, %20, %50, %100)." },
+            { title: "Basel II (2004)", content: "3 Yapısal Blok: Asgari sermaye + Denetim incelemesi + Piyasa disiplini. Kredi + Piyasa + **Operasyonel Risk**.", highlight: true },
+            { title: "Basel III (2010)", content: "CET1: **%4.5**, Tier1: **%6**, LCR/NSFR: **≥%100**, Kaldıraç: **≥%3**." },
+            { title: "LCR Nedir?", content: "Yüksek kaliteli likit varlıklar / 30 günlük net nakit çıkışı. En az **%100** olmalı." },
+            { title: "NSFR Nedir?", content: "Mevcut istikrarlı fonlama / gerekli istikrarlı fonlama. 1 yıllık ufukta **%100** olmalı." }
+        ]
+    },
+    {
+        id: 10,
+        title: "Sermaye Piyasası Kurumları",
+        category: "Finans",
+        items: [
+            { title: "SPK", content: "**Sermaye Piyasası Kurulu.** Düzenleyici ve denetleyici bağımsız idari otorite.", highlight: true },
+            { title: "BİST", content: "**Borsa İstanbul.** 2013'te İMKB'den dönüşmüştür. BİST 100 / BİST 30 endeksleri." },
+            { title: "Takasbank", content: "İstanbul Takas ve Saklama Bankası. Takas, saklama ve merkezi karşı taraf (CCP) hizmetleri." },
+            { title: "MKK", content: "Merkezi Kayıt Kuruluşu. Sermaye piyasası araçlarının kaydileştirilmesi." },
+            { title: "Aracı Kurum", content: "SPK lisanslı, sermaye piyasası faaliyetlerinde aracılık yapan kuruluş." }
+        ]
+    },
+    {
+        id: 11,
+        title: "Atatürk İlkeleri & İnkılap Kronolojisi",
+        category: "Genel Kültür",
+        items: [
+            { title: "6 İlke", content: "**CuMHaLaDİ:** Cumhuriyetçilik, Milliyetçilik, Halkçılık, Laiklik, Devletçilik, İnkılapçılık.", highlight: true },
+            { title: "Saltanat Kaldırıldı", content: "**1 Kasım 1922**" },
+            { title: "Cumhuriyet İlanı", content: "**29 Ekim 1923**" },
+            { title: "Halifelik Kaldırıldı", content: "**3 Mart 1924** (aynı gün Tevhid-i Tedrisat)" },
+            { title: "Latin Alfabesi", content: "**1 Kasım 1928**" },
+            { title: "Kadınlara Seçme Hakkı", content: "Belediye: **1930**, Milletvekilliği: **5 Aralık 1934**" }
+        ]
+    },
+    {
+        id: 12,
+        title: "Bankacılık İngilizce Terimler",
+        category: "İngilizce",
+        items: [
+            { title: "Collateral / Teminat", content: "Kredi güvencesi olarak sunulan varlık." },
+            { title: "NPL / Takipteki Kredi", content: "Non-Performing Loan: Ödemesi gecikmiş kredi.", highlight: true },
+            { title: "KYC / Müşterini Tanı", content: "Know Your Customer: Müşteri kimlik doğrulama." },
+            { title: "AML / Kara Para Önleme", content: "Anti-Money Laundering: Kara para aklama mücadelesi." },
+            { title: "CAR / SYR", content: "Capital Adequacy Ratio: Sermaye Yeterlilik Rasyosu." },
+            { title: "LCR / Likidite Oranı", content: "Liquidity Coverage Ratio: Basel III likidite standardı." }
+        ]
+    },
+    {
+        id: 13,
+        title: "Muhasebe: Hesap Planı ve Temel Denklik",
+        category: "Muhasebe",
+        items: [
+            { title: "Temel Denklik", content: "**Varlıklar = Borçlar + Özkaynaklar** (Aktif = Pasif)", highlight: true },
+            { title: "Dönen Varlıklar (1xx)", content: "100 Kasa, 102 Bankalar, 120 Alıcılar, 153 Ticari Mallar" },
+            { title: "Duran Varlıklar (2xx)", content: "252 Binalar, 253 Tesis Makine, 255 Demirbaşlar, 257 Birikmiş Amortisman (−)" },
+            { title: "KVYK (3xx)", content: "300 Banka Kredileri, 320 Satıcılar, 360 Ödenecek Vergi" },
+            { title: "Özkaynaklar (5xx)", content: "500 Sermaye, 540 Yasal Yedekler, 570 Geçmiş Yıl Karları" },
+            { title: "Borç-Alacak Kuralı", content: "Aktif hesap ↑ = Borç. Pasif hesap ↑ = Alacak. Her yevmiye maddesi: Borç = Alacak", highlight: true },
+            { title: "Amortisman", content: "Normal, Azalan bakiyeler, Üretim miktarı. Yararlı ömre maliyeti dağıtır." }
+        ]
+    },
+    {
+        id: 14,
+        title: "Mali Analiz: Rasyolar Özet Tablosu",
+        category: "Muhasebe",
+        items: [
+            { title: "Cari Oran", content: "DV / KVYK → İdeal: **~2**", highlight: true },
+            { title: "Asit-Test (Likidite)", content: "(DV − Stoklar) / KVYK → İdeal: **~1**" },
+            { title: "Nakit Oran", content: "Hazır Değerler / KVYK → İdeal: **0.2+**" },
+            { title: "Kaldıraç Oranı", content: "Toplam Borç / Toplam Aktif → **<%50** iyi" },
+            { title: "ROE", content: "Net Kar / Özkaynaklar × 100", highlight: true },
+            { title: "ROA", content: "Net Kar / Toplam Aktif × 100" },
+            { title: "Stok Devir Hızı", content: "SMM / Ortalama Stok → Yüksek = iyi" },
+            { title: "Faiz Karşılama", content: "FVÖK / Faiz Giderleri → **>1** olmalı" }
+        ]
     }
 ];

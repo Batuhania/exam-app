@@ -1,4 +1,5 @@
 import { expansionQuestions } from './expansion_questions';
+import { contentExpansionQuestions } from './content_expansion';
 
 export interface Question {
     id: number;
@@ -61,6 +62,28 @@ export const topics: Topic[] = [
     { id: 23, name: "Ekonomi, Finans ve Piyasalar (Uzman)", category: "Alan Bilgisi", questionCount: 30, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [5041, 5042, 5043, 5044, 5045, 5046, 5047, 5048, 5049, 5050, 5051, 5052, 5053, 5054, 5055, 5056, 5057, 5058, 5059, 5060, 5061, 5062, 5063, 5064, 5065, 5066, 5067, 5068, 5069, 5070] },
     { id: 24, name: "Sayısal/Sözel Mantık ve Şifre (ALES & DGS)", category: "Genel Yetenek", questionCount: 50, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012, 5013, 5014, 5015, 5016, 5017, 5018, 5019, 5020, 5071, 5072, 5073, 5074, 5075, 5076, 5077, 5078, 5079, 5080, 5081, 5082, 5083, 5084, 5085, 5086, 5087, 5088, 5089, 5090, 5091, 5092, 5093, 5094, 5095, 5096, 5097, 5098, 5099, 5100] },
     { id: 25, name: "Dijital Bankacılık ve Gelecek Trendleri", category: "Alan Bilgisi", questionCount: 20, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [5101, 5102, 5103, 5104, 5105, 5106, 5107, 5108, 5109, 5110, 5111, 5112, 5113, 5114, 5115, 5116, 5117, 5118, 5119, 5120] },
+
+    // HUKUK
+    { id: 26, name: "Anayasa Hukuku Temelleri", category: "Hukuk", questionCount: 15, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011, 6012, 6013, 6014, 6015] },
+    { id: 27, name: "Borçlar Hukuku", category: "Hukuk", questionCount: 15, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6109, 6110, 6111, 6112, 6113, 6114, 6115] },
+    { id: 28, name: "İcra ve İflas Hukuku", category: "Hukuk", questionCount: 15, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [6201, 6202, 6203, 6204, 6205, 6206, 6207, 6208, 6209, 6210, 6211, 6212, 6213, 6214, 6215] },
+    { id: 29, name: "Medeni Hukuk ve Kişiler Hukuku", category: "Hukuk", questionCount: 10, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [6301, 6302, 6303, 6304, 6305, 6306, 6307, 6308, 6309, 6310] },
+
+    // GENEL KÜLTÜR
+    { id: 30, name: "Atatürk İlkeleri ve İnkılap Tarihi", category: "Genel Kültür", questionCount: 15, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015] },
+    { id: 31, name: "Türkiye Coğrafyası ve Güncel", category: "Genel Kültür", questionCount: 10, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [7101, 7102, 7103, 7104, 7105, 7106, 7107, 7108, 7109, 7110] },
+
+    // İNGİLİZCE
+    { id: 32, name: "Banking & Finance Vocabulary", category: "İngilizce", questionCount: 15, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015] },
+    { id: 33, name: "English Grammar & Reading", category: "İngilizce", questionCount: 10, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [8101, 8102, 8103, 8104, 8105, 8106, 8107, 8108, 8109, 8110] },
+
+    // FİNANS (GENİŞLETİLMİŞ)
+    { id: 34, name: "Risk Yönetimi ve Basel Düzenlemeleri", category: "Finans", questionCount: 15, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014, 9015] },
+    { id: 35, name: "Sermaye Piyasaları ve SPK Mevzuatı", category: "Finans", questionCount: 15, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [9101, 9102, 9103, 9104, 9105, 9106, 9107, 9108, 9109, 9110, 9111, 9112, 9113, 9114, 9115] },
+
+    // MUHASEBE
+    { id: 36, name: "Genel Muhasebe Temelleri", category: "Muhasebe", questionCount: 15, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011, 10012, 10013, 10014, 10015] },
+    { id: 37, name: "Mali Analiz ve Rasyolar", category: "Muhasebe", questionCount: 10, solvedCount: 0, correctCount: 0, wrongCount: 0, questionIds: [10101, 10102, 10103, 10104, 10105, 10106, 10107, 10108, 10109, 10110] },
 ];
 
 // ─── SORU HAVUZU ─────────────────────────
@@ -1562,4 +1585,4 @@ const baseQuestions: Question[] = [
 ];
 
 // ─── SORU HAVUZU BİRLEŞTİRME ─────────────────────
-export const sampleQuestions: Question[] = [...baseQuestions, ...expansionQuestions];
+export const sampleQuestions: Question[] = [...baseQuestions, ...expansionQuestions, ...contentExpansionQuestions];

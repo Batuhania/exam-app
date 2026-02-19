@@ -6,14 +6,13 @@ import { Link } from 'react-router-dom';
 const Pomodoro: React.FC = () => {
     return (
         <div className="h-full flex flex-col">
-            {/* Header */}
             <div className="flex items-center space-x-4 mb-4">
-                <Link to="/" className="p-2 rounded-lg hover:bg-slate-800 transition">
-                    <ChevronLeft className="w-6 h-6 text-slate-400" />
+                <Link to="/" className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                    <ChevronLeft className="w-6 h-6 text-gray-400 dark:text-gray-500" />
                 </Link>
                 <div>
-                    <h2 className="text-xl font-bold text-white">Pomodoro</h2>
-                    <p className="text-xs text-slate-400">Zamanı yönet, başarını artır.</p>
+                    <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Pomodoro</h2>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">Zamanı yönet, başarını artır.</p>
                 </div>
             </div>
 

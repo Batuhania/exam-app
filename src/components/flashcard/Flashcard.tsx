@@ -28,31 +28,31 @@ const Flashcard: React.FC<FlashcardProps> = ({ data }) => {
                 style={{ transformStyle: "preserve-3d" }}
             >
                 {/* Front */}
-                <div className="absolute inset-0 w-full h-full bg-slate-800 rounded-3xl p-8 flex flex-col items-center justify-center text-center shadow-xl border border-slate-700 backface-hidden">
+                <div className="absolute inset-0 w-full h-full bg-white dark:bg-gray-800 rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-md border border-gray-200 dark:border-gray-700 backface-hidden">
                     <div className="mb-4">
-                        <span className="bg-sky-500/10 text-sky-400 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
+                        <span className="bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
                             {data.topic}
                         </span>
                     </div>
-                    <h3 className="text-2xl font-bold text-white leading-tight">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white leading-tight">
                         {data.question}
                     </h3>
-                    <p className="absolute bottom-8 text-slate-500 text-sm animate-pulse">
+                    <p className="absolute bottom-8 text-gray-400 dark:text-gray-500 text-sm animate-pulse">
                         Cevabı görmek için dokun
                     </p>
                 </div>
 
                 {/* Back */}
                 <div
-                    className="absolute inset-0 w-full h-full bg-gradient-to-br from-indigo-900 to-slate-900 rounded-3xl p-8 flex flex-col items-center justify-center text-center shadow-xl border border-indigo-500/30 backface-hidden"
+                    className="absolute inset-0 w-full h-full bg-emerald-600 rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-md backface-hidden"
                     style={{ transform: "rotateY(180deg)" }}
                 >
                     <div className="mb-4">
-                        <span className="bg-green-500/10 text-green-400 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
+                        <span className="bg-white/20 text-white px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
                             Cevap
                         </span>
                     </div>
-                    <p className="text-xl font-medium text-slate-100 leading-relaxed">
+                    <p className="text-xl font-medium text-white leading-relaxed">
                         {data.answer}
                     </p>
                 </div>

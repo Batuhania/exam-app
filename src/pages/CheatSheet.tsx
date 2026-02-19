@@ -23,70 +23,72 @@ const CheatSheet: React.FC = () => {
     }).filter((s): s is CheatSheetSection => s !== null);
 
     return (
-        <div className="min-h-screen bg-slate-950 p-4 md:p-8 pb-24">
+        <div className="min-h-screen p-4 md:p-8 pb-24">
             {/* Header */}
             <header className="flex items-center justify-between mb-8 max-w-5xl mx-auto">
                 <button
                     onClick={() => navigate('/')}
-                    className="p-2 rounded-full hover:bg-slate-800 text-slate-400 hover:text-white transition"
+                    className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition"
                 >
                     <ChevronLeft className="w-6 h-6" />
                 </button>
                 <div className="text-center">
-                    <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
+                    <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
                         Özet Bilgi & Formüller
                     </h1>
-                    <p className="text-xs text-slate-500">Sınav öncesi hızlı tekrar notları</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">Sınav öncesi hızlı tekrar notları</p>
                 </div>
-                <div className="w-10"></div> {/* Spacer for alignment */}
+                <div className="w-10"></div>
             </header>
 
             {/* Search */}
             <div className="max-w-2xl mx-auto mb-8 relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <Search className="h-5 w-5 text-slate-500" />
+                    <Search className="h-5 w-5 text-gray-400 dark:text-gray-500" />
                 </div>
                 <input
                     type="text"
                     placeholder="Konu, formül veya terim ara..."
-                    className="block w-full pl-10 pr-3 py-3 border border-slate-700 rounded-xl leading-5 bg-slate-900 text-slate-300 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm transition shadow-lg"
+                    className="block w-full pl-10 pr-3 py-3 border border-gray-200 dark:border-gray-700 rounded-xl leading-5 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm transition shadow-sm"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                 />
             </div>
 
             {/* Content Grid */}
-            <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
                 {filteredSheets.map((section) => (
-                    <div key={section.id} className="bg-slate-900/50 rounded-2xl border border-slate-800 overflow-hidden hover:border-slate-700 transition group">
+                    <div key={section.id} className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm hover:shadow-md transition">
                         {/* Section Header */}
-                        <div className="bg-slate-800/50 p-4 flex items-center justify-between border-b border-slate-800">
+                        <div className="bg-gray-50 dark:bg-gray-750 p-4 flex items-center justify-between border-b border-gray-100 dark:border-gray-700">
                             <div className="flex items-center space-x-3">
-                                <div className="p-2 bg-emerald-500/10 rounded-lg">
-                                    <BookOpen className="w-5 h-5 text-emerald-400" />
+                                <div className="p-2 bg-emerald-50 dark:bg-emerald-900/30 rounded-lg">
+                                    <BookOpen className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                                 </div>
-                                <h3 className="font-bold text-slate-200">{section.title}</h3>
+                                <h3 className="font-bold text-gray-800 dark:text-gray-200">{section.title}</h3>
                             </div>
-                            <span className="text-[10px] uppercase tracking-wider font-semibold text-slate-500 bg-slate-950 px-2 py-1 rounded">
+                            <span className="text-[10px] uppercase tracking-wider font-semibold text-gray-400 dark:text-gray-500 bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">
                                 {section.category}
                             </span>
                         </div>
 
                         {/* Items List */}
-                        <div className="p-4 space-y-4">
+                        <div className="p-4 space-y-3">
                             {section.items.map((item, idx) => (
-                                <div key={idx} className={`relative p-3 rounded-xl border ${item.highlight ? 'bg-emerald-900/10 border-emerald-500/30' : 'bg-slate-950/50 border-slate-800/50'}`}>
+                                <div key={idx} className={`relative p-3 rounded-lg border ${item.highlight
+                                    ? 'bg-emerald-50 dark:bg-emerald-900/20 border-emerald-200 dark:border-emerald-700'
+                                    : 'bg-gray-50 dark:bg-gray-700/50 border-gray-100 dark:border-gray-600'}`}
+                                >
                                     <div className="flex justify-between items-start mb-1">
-                                        <h4 className={`text-sm font-semibold ${item.highlight ? 'text-emerald-300' : 'text-slate-300'}`}>
+                                        <h4 className={`text-sm font-semibold ${item.highlight ? 'text-emerald-700 dark:text-emerald-400' : 'text-gray-700 dark:text-gray-300'}`}>
                                             {item.title}
                                         </h4>
-                                        {item.highlight && <Bookmark className="w-3 h-3 text-emerald-500" />}
+                                        {item.highlight && <Bookmark className="w-3 h-3 text-emerald-500 dark:text-emerald-400" />}
                                     </div>
-                                    <p className="text-xs text-slate-400 leading-relaxed">
-                                        {/* Simple markdown bold parsing for **text** */}
+                                    <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
                                         {item.content.split(/(\*\*.*?\*\*)/g).map((part: string, i: number) =>
                                             part.startsWith('**') && part.endsWith('**') ?
-                                                <strong key={i} className="text-slate-200 font-bold">{part.slice(2, -2)}</strong> :
+                                                <strong key={i} className="text-gray-700 dark:text-gray-200 font-bold">{part.slice(2, -2)}</strong> :
                                                 part
                                         )}
                                     </p>
@@ -99,7 +101,7 @@ const CheatSheet: React.FC = () => {
 
             {filteredSheets.length === 0 && (
                 <div className="text-center py-12">
-                    <p className="text-slate-500">Aradığınız kriterlere uygun sonuç bulunamadı.</p>
+                    <p className="text-gray-400 dark:text-gray-500">Aradığınız kriterlere uygun sonuç bulunamadı.</p>
                 </div>
             )}
         </div>

@@ -34,14 +34,14 @@ const FlashcardDeck: React.FC<FlashcardDeckProps> = ({ cards }) => {
     if (completed) {
         return (
             <div className="flex flex-col items-center justify-center p-8 space-y-6 text-center h-96">
-                <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mb-4">
-                    <Check className="w-10 h-10 text-green-400" />
+                <div className="w-20 h-20 bg-emerald-50 dark:bg-emerald-900/30 rounded-full flex items-center justify-center mb-4 border-2 border-emerald-200 dark:border-emerald-700">
+                    <Check className="w-10 h-10 text-emerald-600 dark:text-emerald-400" />
                 </div>
-                <h3 className="text-2xl font-bold text-white">Harika İş! 🎉</h3>
-                <p className="text-slate-400">Bu destedeki tüm kartları tamamladın.</p>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Harika İş! 🎉</h3>
+                <p className="text-gray-500 dark:text-gray-400">Bu destedeki tüm kartları tamamladın.</p>
                 <button
                     onClick={resetDeck}
-                    className="flex items-center space-x-2 px-6 py-3 bg-slate-800 rounded-xl text-white hover:bg-slate-700 transition"
+                    className="flex items-center space-x-2 px-6 py-3 bg-gray-100 dark:bg-gray-700 rounded-xl text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition"
                 >
                     <RotateCcw className="w-4 h-4" />
                     <span>Tekrar Başla</span>
@@ -53,14 +53,14 @@ const FlashcardDeck: React.FC<FlashcardDeckProps> = ({ cards }) => {
     return (
         <div className="flex flex-col items-center space-y-8 max-w-sm mx-auto">
             {/* Progress Bar */}
-            <div className="w-full h-1 bg-slate-800 rounded-full overflow-hidden">
+            <div className="w-full h-1.5 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
                 <div
-                    className="h-full bg-sky-500 transition-all duration-300"
+                    className="h-full bg-emerald-500 transition-all duration-300 rounded-full"
                     style={{ width: `${((currentIndex) / cards.length) * 100}%` }}
                 ></div>
             </div>
 
-            <div className="text-slate-400 text-sm font-medium">
+            <div className="text-gray-500 dark:text-gray-400 text-sm font-medium">
                 Kart {currentIndex + 1} / {cards.length}
             </div>
 
@@ -87,14 +87,14 @@ const FlashcardDeck: React.FC<FlashcardDeckProps> = ({ cards }) => {
             <div className="flex space-x-6">
                 <button
                     onClick={() => handleNext(false)}
-                    className="w-16 h-16 rounded-full bg-rose-500/10 border border-rose-500/50 flex items-center justify-center text-rose-500 hover:bg-rose-500 hover:text-white transition active:scale-95"
+                    className="w-16 h-16 rounded-full bg-red-50 dark:bg-red-900/30 border-2 border-red-200 dark:border-red-700 flex items-center justify-center text-red-500 dark:text-red-400 hover:bg-red-500 hover:text-white hover:border-red-500 transition active:scale-95"
                     aria-label="Bilmiyorum"
                 >
                     <X className="w-8 h-8" />
                 </button>
                 <button
                     onClick={() => handleNext(true)}
-                    className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/50 flex items-center justify-center text-emerald-500 hover:bg-emerald-500 hover:text-white transition active:scale-95"
+                    className="w-16 h-16 rounded-full bg-emerald-50 dark:bg-emerald-900/30 border-2 border-emerald-200 dark:border-emerald-700 flex items-center justify-center text-emerald-500 dark:text-emerald-400 hover:bg-emerald-500 hover:text-white hover:border-emerald-500 transition active:scale-95"
                     aria-label="Biliyorum"
                 >
                     <Check className="w-8 h-8" />
